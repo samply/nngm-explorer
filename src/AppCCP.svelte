@@ -11,7 +11,7 @@
 	let catalogueData = '';
 	let libraryOptions = '';
 
-	fetch('catalogues/catalogue-dktk.json')
+	fetch('catalogue-dktk.json')
 		.then((response) => response.text())
 		.then((data) => {
 			catalogueData = data;
@@ -133,7 +133,7 @@
 </header>
 <main>
 	<div class="search">
-		<lens-search-bar treeData={catalogueData} noMatchesFoundMessage={'keine Ergebnisse gefunden'} />
+		<lens-search-bar-multiple treeData={catalogueData} noMatchesFoundMessage={'keine Ergebnisse gefunden'} />
 		<lens-info-button
 			noQueryMessage="Leere Suchanfrage: Sucht nach allen Ergebnissen."
 			showQuery={true}

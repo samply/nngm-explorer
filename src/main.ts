@@ -1,8 +1,3 @@
-/**
- * comment in for npm package usage
- */
-// import "@samply/lens";
-
 import '@samply/lens';
 
 // import "./fragment-development.css";
@@ -10,12 +5,6 @@ import '@samply/lens';
 
 import './ccp.css';
 import App from './AppCCP.svelte';
-
-// import App from './AppBBMRI.svelte'
-// import './bbmri.css'
-
-// import App from "./AppGBA.svelte"
-// import './gba.css'
 
 const app = new App({
 	target: document.getElementById('app')

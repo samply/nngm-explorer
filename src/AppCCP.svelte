@@ -141,7 +141,7 @@
 		<lens-search-button
 			title="Suchen"
 			{measures}
-			backendConfig={JSON.stringify(backendConfig)}
+			backendConfig={backendConfig}
 			{backendMeasures}
 		/>
 	</div>
@@ -278,4 +278,4 @@
 	<a class="imprint" href="https://www.dkfz.de/de/impressum.html">Impressum</a>
 </footer>
 
-<lens-options options={libraryOptions} {catalogueData} />
+<lens-options options={libraryOptions} catalogueData={catalogueData} />

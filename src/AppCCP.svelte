@@ -11,7 +11,7 @@
 	let catalogueData = '';
 	let libraryOptions = '';
 
-	fetch('catalogue-dktk.json')
+	fetch('catalogues/catalogue-dktk.json')
 		.then((response) => response.text())
 		.then((data) => {
 			catalogueData = data;
@@ -110,23 +110,13 @@
 	};
 
 	const barChartBackgroundColors: string[] = ['#4dc9f6', '#3da4c7'];
-
-	const vitalStateHeaders: Map<string, string> = new Map<string, string>()
-		.set('lebend', 'alive')
-		.set('verstorben', 'deceased')
-		.set('unbekannt', 'unknown');
-
-	const therapyHeaders: Map<string, string> = new Map<string, string>().set(
-		'medicationStatements',
-		'Sys. T'
-	);
 </script>
 
 <header>
 	<div class="logo">
 		<img src="../dktk.svg" alt="Logo des DKTK" />
 	</div>
-	<h1>CCP Explorer</h1>
+	<h1>CCP Explorer (Title Here)</h1>
 	<div class="logo logo-dkfz">
 		<img src="../Deutsches_Krebsforschungszentrum_Logo.svg" alt="Logo des DKTK" />
 	</div>
@@ -170,15 +160,21 @@
 					>Diagramme repräsentieren nicht mehr die aktuelle Suche!</lens-search-modified-display
 				>
 			</div>
-			<div class="chart-wrapper">
+      <div class="chart-wrapper chart-diagnosis">
 				<lens-chart
-					title="Patienten pro Standort"
-					catalogueGroupCode="patients"
-					perSite={true}
-					displayLegends={true}
-					chartType="pie"
+					title="Diagnose"
+					catalogueGroupCode="diagnosis"
+					chartType="bar"
+					indexAxis="y"
+					groupingDivider="."
+					groupingLabel=".%"
+					filterRegex="^[CD].*"
+					xAxisTitle="Anzahl der Diagnosen"
+					yAxisTitle="ICD-10-Codes"
+					backgroundColor={JSON.stringify(barChartBackgroundColors)}
 				/>
 			</div>
+
 			<div class="chart-wrapper result-table">
 				<lens-result-table pageSize="10">
 					<div slot="above-pagination" class="result-table-hint-text">
@@ -196,21 +192,7 @@
 					headers={genderHeaders}
 				/>
 			</div>
-			<div class="chart-wrapper chart-diagnosis">
-				<lens-chart
-					title="Diagnose"
-					catalogueGroupCode="diagnosis"
-					chartType="bar"
-					indexAxis="y"
-					groupingDivider="."
-					groupingLabel=".%"
-					filterRegex="^[CD].*"
-					xAxisTitle="Anzahl der Diagnosen"
-					yAxisTitle="ICD-10-Codes"
-					backgroundColor={JSON.stringify(barChartBackgroundColors)}
-				/>
-			</div>
-			<div class="chart-wrapper chart-age-distribution">
+      <div class="chart-wrapper chart-age-distribution">
 				<lens-chart
 					title="Alter bei Erstdiagnose"
 					catalogueGroupCode="age_at_diagnosis"
@@ -219,36 +201,6 @@
 					filterRegex="^(1*[12]*[0-9])"
 					xAxisTitle="Alter"
 					yAxisTitle="Anzahl der Primärdiagnosen"
-					backgroundColor={JSON.stringify(barChartBackgroundColors)}
-				/>
-			</div>
-			<div class="chart-wrapper">
-				<lens-chart
-					title="Vitalstatus"
-					catalogueGroupCode="75186-7"
-					chartType="pie"
-					displayLegends={true}
-					headers={vitalStateHeaders}
-				/>
-			</div>
-			<div class="chart-wrapper">
-				<lens-chart
-					title="Therapieart"
-					catalogueGroupCode="therapy_of_tumor"
-					chartType="bar"
-					headers={therapyHeaders}
-					xAxisTitle="Art der Therapie"
-					yAxisTitle="Anzahl der Therapien"
-					backgroundColor={JSON.stringify(barChartBackgroundColors)}
-				/>
-			</div>
-			<div class="chart-wrapper">
-				<lens-chart
-					title="Systemische Therapien"
-					catalogueGroupCode="medicationStatements"
-					chartType="bar"
-					xAxisTitle="Art der Therapie"
-					yAxisTitle="Anzahl der Therapien"
 					backgroundColor={JSON.stringify(barChartBackgroundColors)}
 				/>
 			</div>

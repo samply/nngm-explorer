@@ -8,11 +8,11 @@
 		dktkHistologyMeasure
 	} from './measures';
 
-	let catalogueData = '';
-	let libraryOptions = '';
+	let catalogueData: string = '';
+	let libraryOptions: string = '';
 
 	fetch('catalogues/catalogue-dktk.json')
-		.then((response) => response.text())
+		.then((response) => response.json())
 		.then((data) => {
 			catalogueData = data;
 		});
@@ -121,9 +121,11 @@
 		<img src="../Deutsches_Krebsforschungszentrum_Logo.svg" alt="Logo des DKTK" />
 	</div>
 </header>
+
+<!-- {#if libraryOptions && catalogueData} -->
 <main>
 	<div class="search">
-		<lens-search-bar-multiple treeData={catalogueData} noMatchesFoundMessage={'keine Ergebnisse gefunden'} />
+		<lens-search-bar-multiple noMatchesFoundMessage={'keine Ergebnisse gefunden'} />
 		<lens-info-button
 			noQueryMessage="Leere Suchanfrage: Sucht nach allen Ergebnissen."
 			showQuery={true}
@@ -148,7 +150,6 @@
 				toggleIconUrl="right-arrow-svgrepo-com.svg"
 				addIconUrl="long-right-arrow-svgrepo-com.svg"
 				infoIconUrl="info-circle-svgrepo-com.svg"
-				treeData={catalogueData}
 				texts={catalogueText}
 				toggle={{ collapsable: false, open: catalogueopen }}
 			/>
@@ -229,5 +230,4 @@
 	<a class="privacy-policy" href="http" download="datenschutzerklaerung">Datenschutz</a>
 	<a class="imprint" href="https://www.dkfz.de/de/impressum.html">Impressum</a>
 </footer>
-
 <lens-options options={libraryOptions} catalogueData={catalogueData} />

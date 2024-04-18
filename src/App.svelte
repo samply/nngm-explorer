@@ -1,125 +1,20 @@
 <script lang="ts">
-	import {
-		dktkDiagnosisMeasure,
-		dktkMedicationStatementsMeasure,
-		dktkPatientsMeasure,
-		dktkProceduresMeasure,
-		dktkSpecimenMeasure,
-		dktkHistologyMeasure
-	} from './measures';
+	import libraryOptions from "./config/options.json";
+	import {backendConfig, barChartBackgroundColors, genderHeaders, measures, backendMeasures} from './config/environment';
+	import {catalogueText, getStaticCatalogue} from './services/catalogue.service'
 
+	let catalogueopen = false;
 	let catalogueData: string = '';
-	let libraryOptions: string = '';
 
-	fetch('catalogues/catalogue-dktk.json')
+	fetch('catalogues/catalogue-example.json')
 		.then((response) => response.json())
 		.then((data) => {
 			catalogueData = data;
 		});
-
-	fetch('options.json')
-		.then((response) => response.json())
-		.then((data) => {
-			libraryOptions = data;
-		});
-
-	const measures = [
-		dktkPatientsMeasure,
-		dktkDiagnosisMeasure,
-		dktkSpecimenMeasure,
-		dktkProceduresMeasure,
-		dktkMedicationStatementsMeasure,
-		dktkHistologyMeasure
-	];
-
-	const backendMeasures = `DKTK_STRAT_DEF_IN_INITIAL_POPULATION`;
-
-	const catalogueText = {
-		group: 'Group',
-		collapseButtonTitle: 'Collapse Tree',
-		expandButtonTitle: 'Expand Tree',
-		numberInput: {
-			labelFrom: 'von',
-			labelTo: 'bis'
-		}
-	};
-
-	let catalogueopen = false;
-
-	const catalogueKeyToResponseKeyMap = [
-		['gender', 'Gender'],
-		['age_at_diagnosis', 'Age'],
-		['diagnosis', 'diagnosis'],
-		['medicationStatements', 'MedicationType'],
-		['sample_kind', 'sample_kind'],
-		['therapy_of_tumor', 'ProcedureType'],
-		['75186-7', '75186-7']
-		// ["encounter", "Encounter"],
-	];
-
-	// VITE_TARGET_ENVIRONMENT should be set by the ci pipeline
-	const backendUrl =
-		import.meta.env.VITE_TARGET_ENVIRONMENT === 'production'
-			? 'https://backend.data.dktk.dkfz.de/prod/'
-			: 'https://backend.demo.lens.samply.de/prod/';
-
-	const uiSiteMap: string[][] = [
-		['berlin', 'Berlin'],
-		['berlin-test', 'Berlin'],
-		['bonn', 'Bonn'],
-		['dresden', 'Dresden'],
-		['essen', 'Essen'],
-		['frankfurt', 'Frankfurt'],
-		['freiburg', 'Freiburg'],
-		['hannover', 'Hannover'],
-		['mainz', 'Mainz'],
-		['muenchen-lmu', 'München(LMU)'],
-		['muenchen-tum', 'München(TUM)'],
-		['ulm', 'Ulm'],
-		['wuerzburg', 'Würzburg'],
-		['mannheim', 'Mannheim'],
-		['dktk-test', 'DKTK-Test'],
-		['hamburg', 'Hamburg']
-	];
-
-	const genderHeaders: Map<string, string> = new Map<string, string>()
-		.set('male', 'männlich')
-		.set('female', 'weiblich')
-		.set('other', 'Divers, Intersexuell')
-		.set('unknown', 'unbekannt');
-
-	const backendConfig = {
-		url: import.meta.env.PROD ? backendUrl : 'http://localhost:8080',
-		backends: [
-			'mannheim',
-			'freiburg',
-			'muenchen-tum',
-			'hamburg',
-			'frankfurt',
-			'berlin-test',
-			'dresden',
-			'mainz',
-			'muenchen-lmu',
-			'essen',
-			'ulm',
-			'wuerzburg',
-			'hannover'
-		],
-		uiSiteMap: uiSiteMap,
-		catalogueKeyToResponseKeyMap: catalogueKeyToResponseKeyMap
-	};
-
-	const barChartBackgroundColors: string[] = ['#4dc9f6', '#3da4c7'];
 </script>
 
 <header>
-	<div class="logo">
-		<img src="../dktk.svg" alt="Logo des DKTK" />
-	</div>
-	<h1>CCP Explorer (Title Here)</h1>
-	<div class="logo logo-dkfz">
-		<img src="../Deutsches_Krebsforschungszentrum_Logo.svg" alt="Logo des DKTK" />
-	</div>
+	<h1>Lens2 exmaple Locator (Title goes Here)</h1>
 </header>
 
 <!-- {#if libraryOptions && catalogueData} -->
@@ -222,12 +117,9 @@
 </main>
 
 <footer>
-	<a class="ccp" href="https://dktk.dkfz.de/klinische-plattformen/ueber-die-ccp/about-ccp">
-		Clinical Communication Platform (CCP)
-	</a>
-	<a class="email" href="mailto:CCP@dkfz.de">Kontakt</a>
-	<a class="user-agreement" href="http" download="nutzervereinbarung">Nutzungsvereinbarung</a>
-	<a class="privacy-policy" href="http" download="datenschutzerklaerung">Datenschutz</a>
-	<a class="imprint" href="https://www.dkfz.de/de/impressum.html">Impressum</a>
+	<div> Made with ♥ and <a href="https://github.com/samply/lens">samply/lens-core</a>.</div>
+	<div class="logo">
+		<img src="../Deutsches_Krebsforschungszentrum_Logo.svg" alt="Logo des DKFZ" />
+	</div>
 </footer>
 <lens-options options={libraryOptions} catalogueData={catalogueData} />

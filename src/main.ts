@@ -1,10 +1,7 @@
 import '@samply/lens';
 
-// import "./fragment-development.css";
-// import App from "./AppFragmentDevelopment.svelte";
-
-import './ccp.css';
-import App from './AppCCP.svelte';
+import './app.css';
+import App from './App.svelte';
 
 const app = new App({
 	target: document.getElementById('app')

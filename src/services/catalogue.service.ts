@@ -1,15 +1,11 @@
 // This file includes a function to the the catalogue
-//TODO: Fix function
 
 // Use this function to get the catalogue from this project
-export function getStaticCatalogue(path: string){
- return  Promise.resolve( fetch(path)
-    .then((response) => response.json())
-    .then((data) => {
-       data;
-    })
-)
-
+export async function getStaticCatalogue(path: string){
+  await fetch(path)
+    const response = await fetch(path);
+    const data = await response.json();
+    return data;
 }
 
 export function getCatalogueFromServer() {

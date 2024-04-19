@@ -4,13 +4,7 @@
 	import {catalogueText, getStaticCatalogue} from './services/catalogue.service'
 
 	let catalogueopen = false;
-	let catalogueData: string = '';
-
-	fetch('catalogues/catalogue-example.json')
-		.then((response) => response.json())
-		.then((data) => {
-			catalogueData = data;
-		});
+	let catalogueDataPromise = getStaticCatalogue('catalogues/catalogue-example.json');
 </script>
 
 <header>
@@ -122,4 +116,10 @@
 		<img src="../Deutsches_Krebsforschungszentrum_Logo.svg" alt="Logo des DKFZ" />
 	</div>
 </footer>
+{#await catalogueDataPromise}
+Loading catalogue...
+{:then catalogueData}
 <lens-options options={libraryOptions} catalogueData={catalogueData} />
+{:catch someError}
+System error: {someError.message}.
+{/await}

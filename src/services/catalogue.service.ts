@@ -9,9 +9,8 @@ export async function getStaticCatalogue(path: string){
 }
 
 export function getCatalogueFromServer() {
-    //TODO: implement
+    // TODO: Implement
 }
-
 
 export const catalogueText = {
     group: 'Group',

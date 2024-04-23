@@ -227,6 +227,15 @@ footer a {
 	border-right: solid 1px var(--blue);
 }
 
+.made_with {
+  margin-top: 12px;
+  margin-right: 12px;
+}
+
+.made_with a {
+  margin-left: -8px;
+}
+
 .imprint {
 	border-right: none;
 }

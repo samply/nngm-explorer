@@ -25,8 +25,17 @@
 
 <main>
 	<div class="search">
-		<lens-search-bar-multiple noMatchesFoundMessage="{'keine Ergebnisse gefunden'}"
-		></lens-search-bar-multiple>
+		{#await catalogueDataPromise}
+			Loading catalogue...
+		{:then catalogueData}
+			<lens-search-bar-multiple
+				noMatchesFoundMessage="{'keine Ergebnisse gefunden'}"
+				treeData="{catalogueData}"
+			></lens-search-bar-multiple>
+		{:catch someError}
+			System error: {someError.message}.
+		{/await}
+
 		<lens-info-button
 			noQueryMessage="Leere Suchanfrage: Sucht nach allen Ergebnissen."
 			showQuery="{true}"

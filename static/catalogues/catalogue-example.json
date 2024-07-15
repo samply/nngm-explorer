@@ -1,7 +1,7 @@
 [
 	{
-		"key": "donor",
-		"name": "Donor/Clinical Information",
+		"key": "patient",
+		"name": "Patient",
 		"childCategories": [
 			{
 				"key": "gender",
@@ -38,6 +38,9 @@
 				"fieldType": "autocomplete",
 				"type": "EQUALS",
 				"system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
+				"infoButtonText": [
+                    "Eine Suche mit dem Platzhalter (%) schließt Untergruppen in die Suche ein, z.B. C34.% sucht nach allen Untergruppen für C34."
+                ],
 				"criteria": [
 					{
 						"key": "C31",
@@ -63,10 +66,12 @@
 			},
 			{
 				"key": "age_at_diagnosis",
-				"name": "Diagnosis age",
-				"fieldType": "number",
-				"type": "BETWEEN",
-				"system": ""
+                "name": "Alter bei Erstdiagnose",
+                "system": "",
+                "fieldType": "number",
+                "type": "BETWEEN",
+                "min": 0,
+                "max": 150
 			}
 		]
 	},
@@ -75,7 +80,7 @@
 		"name": "Tumorentität",
 		"childCategories": [
 			{
-				"key": "urn:dktk:code:2:2",
+				"key": "neuro",
 				"name": "Neuroonkologie",
 				"childCategories": [
 					{
@@ -92,35 +97,25 @@
 								"aggregatedValue": [
 									[
 										{
-											"key": "diagnosis",
-											"type": "EQUALS",
-											"system": "",
-											"name": "D43.%"
+											"name": "D43.%",
+											"value": "diagnosis"
 										}
 									],
 									[
 										{
-											"key": "59847-4",
-											"type": "EQUALS",
-											"system": "",
+											"value": "59847-4",
 											"name": "9383/1"
 										},
 										{
-											"key": "59847-4",
-											"type": "EQUALS",
-											"system": "",
+											"value": "59847-4",
 											"name": "9384/1"
 										},
 										{
-											"key": "59847-4",
-											"type": "EQUALS",
-											"system": "",
+											"value": "59847-4",
 											"name": "9394/1"
 										},
 										{
-											"key": "59847-4",
-											"type": "EQUALS",
-											"system": "",
+											"value": "59847-4",
 											"name": "9421/1"
 										}
 									]

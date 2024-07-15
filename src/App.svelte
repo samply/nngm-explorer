@@ -1,16 +1,48 @@
 <script lang="ts">
-	import libraryOptions from './config/options.json';
+	import options from './config/options.json';
 	import {
-		backendConfig,
 		barChartBackgroundColors,
 		genderHeaders,
-		measures,
-		backendMeasures
+		measures
 	} from './config/environment';
+	import type { LensDataPasser } from '@samply/lens';
 	import { catalogueText, getStaticCatalogue } from './services/catalogue.service';
 
 	let catalogueopen = false;
 	let catalogueDataPromise = getStaticCatalogue('catalogues/catalogue-example.json');
+
+	let dataPasser: LensDataPasser;
+
+	/**
+	 * The following functions are the API to the library stores (state)
+	 * here you get information to use in your application
+	 * or manipulate the stores
+	 * use if needed and import types from @samply/lens
+	 */
+
+	// const getQuery = (): void => {
+	// 	console.log('getQuery()', dataPasser.getQueryAPI());
+	// };
+
+	// const getResponse = (): void => {
+	// 	console.log('getResponse()', dataPasser.getResponseAPI());
+	// };
+
+	// const getAST = (): void => {
+	// 	console.log('getAst()', dataPasser.getAstAPI());
+	// };
+
+	// const removeItem = (queryObject: QueryItem): void => {
+	// 	console.log('removeItem()', queryObject);
+	// 	dataPasser.removeItemFromQuyeryAPI({ queryObject });
+	// 	getQuery();
+	// };
+
+	// const removeValue = (queryItem: QueryItem, value: QueryValue): void => {
+	// 	console.log('removeValue()', queryItem, value);
+	// 	dataPasser.removeValueFromQueryAPI({ queryItem, value });
+	// 	getQuery();
+	// };
 </script>
 
 <header>
@@ -25,40 +57,34 @@
 
 <main>
 	<div class="search">
-		{#await catalogueDataPromise}
-			Loading catalogue...
-		{:then catalogueData}
-			<lens-search-bar-multiple
-				noMatchesFoundMessage="{'keine Ergebnisse gefunden'}"
-				treeData="{catalogueData}"
+		<div class="search-wrapper">
+			<lens-search-bar-multiple noMatchesFoundMessage="{'keine Ergebnisse gefunden'}"
 			></lens-search-bar-multiple>
-		{:catch someError}
-			System error: {someError.message}.
-		{/await}
-
-		<lens-info-button
-			noQueryMessage="Leere Suchanfrage: Sucht nach allen Ergebnissen."
-			showQuery="{true}"
-		></lens-info-button>
-		<lens-search-button title="Suchen" {measures} {backendConfig} {backendMeasures}
-		></lens-search-button>
+			<lens-info-button
+				noQueryMessage="Leere Suchanfrage: Sucht nach allen Ergebnissen."
+				showQuery="{true}"
+			></lens-info-button>
+			<lens-search-button title="Suchen"></lens-search-button>
+		</div>
 	</div>
 	<div class="grid">
-		<div class="catalogue">
-			<h2>Suchkriterien</h2>
-			<lens-info-button
-				message="{[
-					`Bei Patienten mit mehreren onkologischen Diagnosen, können sich ausgewählte Suchkriterien nicht nur auf eine Erkrankung beziehen, sondern auch auf Weitere.`,
-					`Innerhalb einer Kategorie werden verschiedene Ausprägungen mit einer „Oder-Verknüpfung“ gesucht; bei der Suche über mehrere Kategorien mit einer „Und-Verknüpfung“.`
-				]}"
-			></lens-info-button>
-			<lens-catalogue
-				toggleIconUrl="right-arrow-svgrepo-com.svg"
-				addIconUrl="long-right-arrow-svgrepo-com.svg"
-				infoIconUrl="info-circle-svgrepo-com.svg"
-				texts="{catalogueText}"
-				toggle="{{ collapsable: false, open: catalogueopen }}"
-			></lens-catalogue>
+		<div class="catalogue-wrapper">
+			<div class="catalogue">
+				<h2>Suchkriterien</h2>
+				<lens-info-button
+					message="{[
+						`Bei Patienten mit mehreren onkologischen Diagnosen, können sich ausgewählte Suchkriterien nicht nur auf eine Erkrankung beziehen, sondern auch auf Weitere.`,
+						`Innerhalb einer Kategorie werden verschiedene Ausprägungen mit einer „Oder-Verknüpfung“ gesucht; bei der Suche über mehrere Kategorien mit einer „Und-Verknüpfung“.`
+					]}"
+				></lens-info-button>
+				<lens-catalogue
+					toggleIconUrl="right-arrow-svgrepo-com.svg"
+					addIconUrl="long-right-arrow-svgrepo-com.svg"
+					infoIconUrl="info-circle-svgrepo-com.svg"
+					texts="{catalogueText}"
+					toggle="{{ collapsable: false, open: catalogueopen }}"
+				></lens-catalogue>
+			</div>
 		</div>
 		<div class="charts">
 			<div class="chart-wrapper result-summary">
@@ -139,7 +165,9 @@
 {#await catalogueDataPromise}
 	Loading catalogue...
 {:then catalogueData}
-	<lens-options options="{libraryOptions}" {catalogueData}></lens-options>
+	<lens-options {options} {catalogueData} {measures}></lens-options>
 {:catch someError}
 	System error: {someError.message}.
 {/await}
+
+<lens-data-passer bind:this="{dataPasser}"></lens-data-passer>

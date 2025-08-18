@@ -1,10 +1,7 @@
 {
     "iconOptions": {
         "deleteUrl": "delete_icon.svg",
-        "infoUrl": "info-circle-svgrepo-com.svg",
-        "selectAll": {
-            "text": "Add all"
-        }
+        "infoUrl": "info-circle-svgrepo-com.svg"
     },
     "siteMappings": {
         "berlin-test": "Berlin",
@@ -23,6 +20,40 @@
         "dktk-test": "DKTK-Test",
         "hamburg": "Hamburg"
     },
+    "catalogueKeyToResponseKeyMap": [
+        [
+            "gender",
+            "Gender"
+        ],
+        [
+            "age_at_diagnosis",
+            "Age"
+        ],
+        [
+            "diagnosis",
+            "diagnosis"
+        ],
+        [
+            "medicationStatements",
+            "MedicationType"
+        ],
+        [
+            "sample_kind",
+            "sample_kind"
+        ],
+        [
+            "therapy_of_tumor",
+            "ProcedureType"
+        ],
+        [
+            "75186-7",
+            "75186-7"
+        ],
+        [
+            "vital",
+            "placeholder"
+        ]
+    ],
     "chartOptions": {
         "patients": {
             "legendMapping": {
@@ -67,12 +98,7 @@
                 "\"verstorben\": ein Todesdatum ist dokumentiert oder das aktuelle Lebensalter ist größer 123 Jahre.",
                 "\"lebend\": wird angenommen, wenn kein Todesdatum dokumentiert ist oder das aktuelle Lebensalter nicht 123 Jahre überschritten hat.",
                 "\"unbekannt\": kein Geburtsdatum oder Todesdatum bekannt."
-            ],
-            "legendMapping": {
-                "L": "lebt",
-                "T": "verstorben",
-                "A": "lost to follow-up"
-            }
+            ]
         },
         "therapy_of_tumor": {
             "hintText": [
@@ -218,57 +244,6 @@
         ]
     },
     "backends": {
-        "spots": [
-            {
-                "name": "DKTK",
-                "backendMeasures": "DKTK_STRAT_DEF_IN_INITIAL_POPULATION",
-                "url": "http://localhost:8055",
-                "sites": [
-                    "berlin-test",
-                    "dresden",
-                    "essen",
-                    "frankfurt",
-                    "freiburg",
-                    "hannover",
-                    "mainz",
-                    "muenchen-lmu",
-                    "muenchen-tum",
-                    "ulm",
-                    "wuerzburg",
-                    "mannheim",
-                    "hamburg"
-                ],
-                "catalogueKeyToResponseKeyMap": [
-                    [
-                        "gender",
-                        "Gender"
-                    ],
-                    [
-                        "age_at_diagnosis",
-                        "Age"
-                    ],
-                    [
-                        "diagnosis",
-                        "diagnosis"
-                    ],
-                    [
-                        "medicationStatements",
-                        "MedicationType"
-                    ],
-                    [
-                        "sample_kind",
-                        "sample_kind"
-                    ],
-                    [
-                        "therapy_of_tumor",
-                        "ProcedureType"
-                    ],
-                    [
-                        "75186-7",
-                        "75186-7"
-                    ]
-                ]
-            }
-        ]
+
     }
 }

@@ -1,0 +1,1095 @@
+[
+    {
+        "key": "tumor_classification",
+        "name": "Klassifikation von Tumoren",
+        "fieldType": "group",
+        "childCategories": [
+            {
+                "key": "nngmDiagnosis",
+                "name": "Diagnose ICD-10",
+                "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                "fieldType": "autocomplete",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "8140/3",
+                        "name": "8140/3",
+                        "description": "Adenokarzinom o.n.A."
+                    },
+                    {
+                        "key": "8140/6",
+                        "name": "8140/6",
+                        "description": "Adenokarzinom-Metastase o.n.A."
+                    },
+                    {
+                        "key": "8250/3",
+                        "name": "8250/3",
+                        "description": "Bronchiolo-alveoläres Adenokarzinom o.n.A."
+                    },
+                    {
+                        "key": "8551/3",
+                        "name": "8551/3",
+                        "description": "Azinuszell-Zystadenokarzinom"
+                    },
+                    {
+                        "key": "8260/3",
+                        "name": "8260/3",
+                        "description": "Papilläres Adenokarzinom o.n.A."
+                    },
+                    {
+                        "key": "8265/3",
+                        "name": "8265/3",
+                        "description": "Mikropapilläres Karzinom o.n.A."
+                    },
+                    {
+                        "key": "8230/3",
+                        "name": "8230/3",
+                        "description": "Solides Karzinom o.n.A."
+                    },
+                    {
+                        "key": "8253/3",
+                        "name": "8253/3",
+                        "description": "Muzinöses bronchiolo-alveoläres Karzinom"
+                    },
+                    {
+                        "key": "8254/3",
+                        "name": "8254/3",
+                        "description": "Gemischtes muzinöses und nichtmuzinöses bronchiolo-alveoläres Karzinom"
+                    },
+                    {
+                        "key": "8480/3",
+                        "name": "8480/3",
+                        "description": "Muzinöses Adenokarzinom"
+                    },
+                    {
+                        "key": "8333/3",
+                        "name": "8333/3",
+                        "description": "Fetales Adenokarzinom"
+                    },
+                    {
+                        "key": "8144/3",
+                        "name": "8144/3",
+                        "description": "Adenokarzinom vom intestinalen Typ"
+                    },
+                    {
+                        "key": "8070/3",
+                        "name": "8070/3",
+                        "description": "Plattenepithelkarzinom o.n.A."
+                    },
+                    {
+                        "key": "8071/3",
+                        "name": "8071/3",
+                        "description": "Verhornendes Plattenepithelkarzinom o.n.A."
+                    },
+                    {
+                        "key": "8072/3",
+                        "name": "8072/3",
+                        "description": "Großzelliges nichtverhornendes Plattenepithelkarzinom o.n.A."
+                    },
+                    {
+                        "key": "8083/3",
+                        "name": "8083/3",
+                        "description": "Basaloides Plattenepithelkarzinom"
+                    },
+                    {
+                        "key": "8041/3",
+                        "name": "8041/3",
+                        "description": "Kleinzelliges Karzinom o.n.A."
+                    },
+                    {
+                        "key": "8045/3",
+                        "name": "8045/3",
+                        "description": "Kombiniertes kleinzelliges Karzinom"
+                    },
+                    {
+                        "key": "8013/3",
+                        "name": "8013/3",
+                        "description": "Großzelliges neuroendokrines Karzinom"
+                    },
+                    {
+                        "key": "8240/3",
+                        "name": "8240/3",
+                        "description": "Karzinoidtumor o.n.A."
+                    },
+                    {
+                        "key": "8249/3",
+                        "name": "8249/3",
+                        "description": "Atypischer Karzinoidtumor"
+                    },
+                    {
+                        "key": "8012/3",
+                        "name": "8012/3",
+                        "description": "Großzelliges Karzinom o.n.A."
+                    },
+                    {
+                        "key": "8010/6",
+                        "name": "8010/6",
+                        "description": "Karzinom-Metastase o.n.A."
+                    },
+                    {
+                        "key": "8560/3",
+                        "name": "8560/3",
+                        "description": "Adenosquamöses Karzinom"
+                    },
+                    {
+                        "key": "8560/3",
+                        "name": "8560/3",
+                        "description": "Pleomorphes Karzinom"
+                    },
+                    {
+                        "key": "8430/3",
+                        "name": "8430/3",
+                        "description": "Mukoepidermoid-Karzinom"
+                    },
+                    {
+                        "key": "8200/3",
+                        "name": "8200/3",
+                        "description": "Adenoid-zystisches Karzinom"
+                    },
+                    {
+                        "key": "8562/3",
+                        "name": "8562/3",
+                        "description": "Epithelial-myoepitheliales Karzinom"
+                    },
+                    {
+                        "key": "8000/0",
+                        "name": "8000/0",
+                        "description": "Benigne Neoplasie o.n.A."
+                    },
+                    {
+                        "key": "8000/1",
+                        "name": "8000/1",
+                        "description": "Neoplasie fraglicher Dignität"
+                    },
+                    {
+                        "key": "8000/3",
+                        "name": "8000/3",
+                        "description": "Maligne Neoplasie"
+                    },
+                    {
+                        "key": "8000/6",
+                        "name": "8000/6",
+                        "description": "Neoplasie, Metastase"
+                    }
+                ]
+            },
+            {
+                "key": "59847-4",
+                "name": "Morphologie ICD-O-3",
+                "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                "fieldType": "autocomplete",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "8140/3",
+                        "name": "8140/3",
+                        "description": "Adenokarzinom o.n.A."
+                    },
+                    {
+                        "key": "8140/6",
+                        "name": "8140/6",
+                        "description": "Adenokarzinom-Metastase o.n.A."
+                    },
+                    {
+                        "key": "8250/3",
+                        "name": "8250/3",
+                        "description": "Bronchiolo-alveoläres Adenokarzinom o.n.A."
+                    },
+                    {
+                        "key": "8551/3",
+                        "name": "8551/3",
+                        "description": "Azinuszell-Zystadenokarzinom"
+                    },
+                    {
+                        "key": "8260/3",
+                        "name": "8260/3",
+                        "description": "Papilläres Adenokarzinom o.n.A."
+                    },
+                    {
+                        "key": "8265/3",
+                        "name": "8265/3",
+                        "description": "Mikropapilläres Karzinom o.n.A."
+                    },
+                    {
+                        "key": "8230/3",
+                        "name": "8230/3",
+                        "description": "Solides Karzinom o.n.A."
+                    },
+                    {
+                        "key": "8253/3",
+                        "name": "8253/3",
+                        "description": "Muzinöses bronchiolo-alveoläres Karzinom"
+                    },
+                    {
+                        "key": "8254/3",
+                        "name": "8254/3",
+                        "description": "Gemischtes muzinöses und nichtmuzinöses bronchiolo-alveoläres Karzinom"
+                    },
+                    {
+                        "key": "8480/3",
+                        "name": "8480/3",
+                        "description": "Muzinöses Adenokarzinom"
+                    },
+                    {
+                        "key": "8333/3",
+                        "name": "8333/3",
+                        "description": "Fetales Adenokarzinom"
+                    },
+                    {
+                        "key": "8144/3",
+                        "name": "8144/3",
+                        "description": "Adenokarzinom vom intestinalen Typ"
+                    },
+                    {
+                        "key": "8070/3",
+                        "name": "8070/3",
+                        "description": "Plattenepithelkarzinom o.n.A."
+                    },
+                    {
+                        "key": "8071/3",
+                        "name": "8071/3",
+                        "description": "Verhornendes Plattenepithelkarzinom o.n.A."
+                    },
+                    {
+                        "key": "8072/3",
+                        "name": "8072/3",
+                        "description": "Großzelliges nichtverhornendes Plattenepithelkarzinom o.n.A."
+                    },
+                    {
+                        "key": "8083/3",
+                        "name": "8083/3",
+                        "description": "Basaloides Plattenepithelkarzinom"
+                    },
+                    {
+                        "key": "8041/3",
+                        "name": "8041/3",
+                        "description": "Kleinzelliges Karzinom o.n.A."
+                    },
+                    {
+                        "key": "8045/3",
+                        "name": "8045/3",
+                        "description": "Kombiniertes kleinzelliges Karzinom"
+                    },
+                    {
+                        "key": "8013/3",
+                        "name": "8013/3",
+                        "description": "Großzelliges neuroendokrines Karzinom"
+                    },
+                    {
+                        "key": "8240/3",
+                        "name": "8240/3",
+                        "description": "Karzinoidtumor o.n.A."
+                    },
+                    {
+                        "key": "8249/3",
+                        "name": "8249/3",
+                        "description": "Atypischer Karzinoidtumor"
+                    },
+                    {
+                        "key": "8012/3",
+                        "name": "8012/3",
+                        "description": "Großzelliges Karzinom o.n.A."
+                    },
+                    {
+                        "key": "8010/6",
+                        "name": "8010/6",
+                        "description": "Karzinom-Metastase o.n.A."
+                    },
+                    {
+                        "key": "8560/3",
+                        "name": "8560/3",
+                        "description": "Adenosquamöses Karzinom"
+                    },
+                    {
+                        "key": "8560/3",
+                        "name": "8560/3",
+                        "description": "Pleomorphes Karzinom"
+                    },
+                    {
+                        "key": "8430/3",
+                        "name": "8430/3",
+                        "description": "Mukoepidermoid-Karzinom"
+                    },
+                    {
+                        "key": "8200/3",
+                        "name": "8200/3",
+                        "description": "Adenoid-zystisches Karzinom"
+                    },
+                    {
+                        "key": "8562/3",
+                        "name": "8562/3",
+                        "description": "Epithelial-myoepitheliales Karzinom"
+                    },
+                    {
+                        "key": "8000/0",
+                        "name": "8000/0",
+                        "description": "Benigne Neoplasie o.n.A."
+                    },
+                    {
+                        "key": "8000/1",
+                        "name": "8000/1",
+                        "description": "Neoplasie fraglicher Dignität"
+                    },
+                    {
+                        "key": "8000/3",
+                        "name": "8000/3",
+                        "description": "Maligne Neoplasie"
+                    },
+                    {
+                        "key": "8000/6",
+                        "name": "8000/6",
+                        "description": "Neoplasie, Metastase"
+                    }
+                ]
+            },
+            {
+                "key": "uicc",
+                "name": "UICC Stadium",
+                "system": "",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "0",
+                        "name": "0",
+                        "description": "0"
+                    },
+                    {
+                        "key": "IA1",
+                        "name": "IA1",
+                        "description": "IA1"
+                    },
+                    {
+                        "key": "IA2",
+                        "name": "IA2",
+                        "description": "IA2"
+                    },
+                    {
+                        "key": "IA3",
+                        "name": "IA3",
+                        "description": "IA3"
+                    },
+                    {
+                        "key": "IB",
+                        "name": "IB",
+                        "description": "IB"
+                    },
+                    {
+                        "key": "IIA",
+                        "name": "IIA",
+                        "description": "IIA"
+                    },
+                    {
+                        "key": "IIB",
+                        "name": "IIB",
+                        "description": "IIB"
+                    },
+                    {
+                        "key": "IIIA",
+                        "name": "IIIA",
+                        "description": "IIIA"
+                    },
+                    {
+                        "key": "IIIA1",
+                        "name": "IIIA1",
+                        "description": "IIIA1"
+                    },
+                    {
+                        "key": "IIIA2",
+                        "name": "IIIA2",
+                        "description": "IIIA2"
+                    },
+                    {
+                        "key": "IIIA3",
+                        "name": "IIIA3",
+                        "description": "IIIA3"
+                    },
+                    {
+                        "key": "IIIA4",
+                        "name": "IIIA4",
+                        "description": "IIIA4"
+                    },
+                    {
+                        "key": "IIIB",
+                        "name": "IIIB",
+                        "description": "IIIB"
+                    },
+                    {
+                        "key": "IIIC",
+                        "name": "IIIC",
+                        "description": "IIIC"
+                    },
+                    {
+                        "key": "IVA",
+                        "name": "IVA",
+                        "description": "IVA"
+                    },
+                    {
+                        "key": "IVB",
+                        "name": "IVB",
+                        "description": "IVB"
+                    },
+                    {
+                        "key": "unknown",
+                        "name": "unknown",
+                        "description": "unknown"
+                    }
+                ]
+            },
+            {
+                "key": "59542-1-nNGM",
+                "name": "Grading",
+                "system": "",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "G0",
+                        "name": "G0",
+                        "description": "Grading nicht vorgesehen"
+                    },
+                    {
+                        "key": "G1",
+                        "name": "G1",
+                        "description": "gut differenziert"
+                    },
+                    {
+                        "key": "G2",
+                        "name": "G2",
+                        "description": "mäßig differenziert"
+                    },
+                    {
+                        "key": "G3",
+                        "name": "G3",
+                        "description": "schlecht / gering differenziert"
+                    },
+                    {
+                        "key": "G4",
+                        "name": "G4",
+                        "description": "undifferenzierter Tumor mit sehr hohem Malignitätsgrad"
+                    },
+                    {
+                        "key": "GX",
+                        "name": "GX",
+                        "description": "nicht bestimmbar"
+                    },
+                    {
+                        "key": "U",
+                        "name": "U",
+                        "description": "unbekannt"
+                    },
+                    {
+                        "key": "T",
+                        "name": "T",
+                        "description": "trifft nicht zu"
+                    }
+                ]
+            },
+            {
+                "key": "bodySiteNNGM",
+                "name": "Seitenlokalisation",
+                "system": "http://terminology.hl7.org/CodeSystem/icd-o-3",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "C34.0",
+                        "name": "C34.0",
+                        "description": "Hauptbronchus"
+                    },
+                    {
+                        "key": "C34.1",
+                        "name": "C34.1",
+                        "description": "Oberlappen (-Bronchus)"
+                    },
+                    {
+                        "key": "C34.2",
+                        "name": "C34.2",
+                        "description": "Mittellappen (-Bronchus)"
+                    },
+                    {
+                        "key": "C34.3",
+                        "name": "C34.3",
+                        "description": "Unterlappen (-Bronchus)"
+                    },
+                    {
+                        "key": "C34.8",
+                        "name": "C34.8",
+                        "description": "Bronchus und Lunge, mehrere Teilbereiche überlappend"
+                    },
+                    {
+                        "key": "C34.9",
+                        "name": "C34.9",
+                        "description": "Bronchus oder Lunge, nicht näher bezeichnet"
+                    },
+                    {
+                        "key": "C22.0",
+                        "name": "C22.0",
+                        "description": "Leber"
+                    },
+                    {
+                        "key": "C22.1",
+                        "name": "C22.1",
+                        "description": "Intrahepatische Gallengänge"
+                    },
+                    {
+                        "key": "C42.2",
+                        "name": "C42.2",
+                        "description": "Milz"
+                    },
+                    {
+                        "key": "C70.0",
+                        "name": "C70.0",
+                        "description": "Hirnhäute"
+                    },
+                    {
+                        "key": "C70.1",
+                        "name": "C70.1",
+                        "description": "Rückenmarkhäute"
+                    },
+                    {
+                        "key": "C70.9",
+                        "name": "C70.9",
+                        "description": "Meningen o.n.A."
+                    },
+                    {
+                        "key": "C71.0",
+                        "name": "C71.0",
+                        "description": "Cerebrum"
+                    },
+                    {
+                        "key": "C71.1",
+                        "name": "C71.1",
+                        "description": "Frontallappen"
+                    },
+                    {
+                        "key": "C71.2",
+                        "name": "C71.2",
+                        "description": "Temporallappen"
+                    },
+                    {
+                        "key": "C71.3",
+                        "name": "C71.3",
+                        "description": "Parietallappen"
+                    },
+                    {
+                        "key": "C71.4",
+                        "name": "C71.4",
+                        "description": "Okzipitallappen"
+                    },
+                    {
+                        "key": "C71.5",
+                        "name": "C71.5",
+                        "description": "Ventrikel o.n.A."
+                    },
+                    {
+                        "key": "C71.6",
+                        "name": "C71.6",
+                        "description": "Kleinhirn o.n.A."
+                    },
+                    {
+                        "key": "C71.7",
+                        "name": "C71.7",
+                        "description": "Hirnstamm"
+                    },
+                    {
+                        "key": "C71.8",
+                        "name": "C71.8",
+                        "description": "Gehirn, mehrere Teilbereiche überlappend"
+                    },
+                    {
+                        "key": "C71.9",
+                        "name": "C71.9",
+                        "description": "Gehirn o.n.A."
+                    },
+                    {
+                        "key": "C72.0",
+                        "name": "C72.0",
+                        "description": "Rückenmark"
+                    },
+                    {
+                        "key": "C72.1",
+                        "name": "C72.1",
+                        "description": "Cauda equina"
+                    },
+                    {
+                        "key": "C72.2",
+                        "name": "C72.2",
+                        "description": "N. olfactorius"
+                    },
+                    {
+                        "key": "C72.3",
+                        "name": "C72.3",
+                        "description": "N. opticus"
+                    },
+                    {
+                        "key": "C72.4",
+                        "name": "C72.4",
+                        "description": "N. acusticus."
+                    },
+                    {
+                        "key": "C72.5",
+                        "name": "C72.5",
+                        "description": "Hirnnerven o.n.A."
+                    },
+                    {
+                        "key": "C72.8",
+                        "name": "C72.8",
+                        "description": "Gehirn und andere Teile des Zentralnervensystems, mehrere Teilbereiche überlappend"
+                    },
+                    {
+                        "key": "C72.9",
+                        "name": "C72.9",
+                        "description": "Nervensystem"
+                    },
+                    {
+                        "key": "C74.0",
+                        "name": "C74.0",
+                        "description": "Nebennierenrinde"
+                    },
+                    {
+                        "key": "C74.1",
+                        "name": "C74.1",
+                        "description": "Nebennierenmark"
+                    },
+                    {
+                        "key": "C74.9",
+                        "name": "C74.9",
+                        "description": "Nebenniere o.n.A."
+                    }
+                ]
+            },
+            {
+                "key": "78873005",
+                "name": "TNM-T",
+                "system": "",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "T0",
+                        "name": "T0",
+                        "description": "T0"
+                    },
+                    {
+                        "key": "TX",
+                        "name": "TX",
+                        "description": "TX"
+                    },
+                    {
+                        "key": "Tis",
+                        "name": "Tis",
+                        "description": "Tis"
+                    },
+                    {
+                        "key": "T1",
+                        "name": "T1",
+                        "description": "T1"
+                    },
+                    {
+                        "key": "Ta",
+                        "name": "Ta",
+                        "description": "Ta"
+                    },
+                    {
+                        "key": "T1a",
+                        "name": "T1a",
+                        "description": "T1a"
+                    },
+                    {
+                        "key": "T1a1",
+                        "name": "T1a1",
+                        "description": "T1a1"
+                    },
+                    {
+                        "key": "T1a2",
+                        "name": "T1a2",
+                        "description": "T1a2"
+                    },
+                    {
+                        "key": "T1b",
+                        "name": "T1b",
+                        "description": "T1b"
+                    },
+                    {
+                        "key": "T1b1",
+                        "name": "T1b1",
+                        "description": "T1b1"
+                    },
+                    {
+                        "key": "T1b2",
+                        "name": "T1b2",
+                        "description": "T1b2"
+                    },
+                    {
+                        "key": "T1c",
+                        "name": "T1c",
+                        "description": "T1c"
+                    },
+                    {
+                        "key": "T1mi",
+                        "name": "T1mi",
+                        "description": "T1mi"
+                    },
+                    {
+                        "key": "T2",
+                        "name": "T2",
+                        "description": "T2"
+                    },
+                    {
+                        "key": "T2a",
+                        "name": "T2a",
+                        "description": "T2a"
+                    },
+                    {
+                        "key": "T2a1",
+                        "name": "T2a1",
+                        "description": "T2a1"
+                    },
+                    {
+                        "key": "T2a2",
+                        "name": "T2a2",
+                        "description": "T2a2"
+                    },
+                    {
+                        "key": "T2b",
+                        "name": "T2b",
+                        "description": "T2b"
+                    },
+                    {
+                        "key": "T2c",
+                        "name": "T2c",
+                        "description": "T2c"
+                    },
+                    {
+                        "key": "T3",
+                        "name": "T3",
+                        "description": "T3"
+                    },
+                    {
+                        "key": "T3a",
+                        "name": "T3a",
+                        "description": "T3a"
+                    },
+                    {
+                        "key": "T3b",
+                        "name": "T3b",
+                        "description": "T3b"
+                    },
+                    {
+                        "key": "T3c",
+                        "name": "T3c",
+                        "description": "T3c"
+                    },
+                    {
+                        "key": "T4",
+                        "name": "T4",
+                        "description": "T4"
+                    },
+                    {
+                        "key": "T4a",
+                        "name": "T4a",
+                        "description": "T4a"
+                    },
+                    {
+                        "key": "T4b",
+                        "name": "T4b",
+                        "description": "T4b"
+                    },
+                    {
+                        "key": "T4c",
+                        "name": "T4c",
+                        "description": "T4c."
+                    },
+                    {
+                        "key": "T4d",
+                        "name": "T4d",
+                        "description": "T4d"
+                    }
+                ]
+            },
+            {
+                "key": "277206009",
+                "name": "TNM-N",
+                "system": "",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "N0",
+                        "name": "N0",
+                        "description": "N0"
+                    },
+                    {
+                        "key": "NX",
+                        "name": "NX",
+                        "description": "NX"
+                    },
+                    {
+                        "key": "N1",
+                        "name": "N1",
+                        "description": "N1"
+                    },
+                    {
+                        "key": "N1a",
+                        "name": "N1a",
+                        "description": "N1a"
+                    },
+                    {
+                        "key": "N1b",
+                        "name": "N1b",
+                        "description": "N1b"
+                    },
+                    {
+                        "key": "N1c",
+                        "name": "N1c",
+                        "description": "N1c"
+                    },
+                    {
+                        "key": "N2",
+                        "name": "N2",
+                        "description": "N2"
+                    },
+                    {
+                        "key": "N2a",
+                        "name": "N2a",
+                        "description": "N2a"
+                    },
+                    {
+                        "key": "N2b",
+                        "name": "N2b",
+                        "description": "N2b"
+                    },
+                    {
+                        "key": "N2c",
+                        "name": "N2c",
+                        "description": "N2c"
+                    },
+                    {
+                        "key": "N3",
+                        "name": "N3",
+                        "description": "N3"
+                    },
+                    {
+                        "key": "N3a",
+                        "name": "N3a",
+                        "description": "N3a"
+                    },
+                    {
+                        "key": "N3b",
+                        "name": "N3b",
+                        "description": "N3b"
+                    },
+                    {
+                        "key": "N3c",
+                        "name": "N3c",
+                        "description": "N3c"
+                    }
+                ]
+            },
+            {
+                "key": "277208005",
+                "name": "TNM-M",
+                "system": "",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "M0",
+                        "name": "M0",
+                        "description": "M0"
+                    },
+                    {
+                        "key": "MX",
+                        "name": "MX",
+                        "description": "MX"
+                    },
+                    {
+                        "key": "M1",
+                        "name": "M1",
+                        "description": "M1"
+                    },
+                    {
+                        "key": "M1a",
+                        "name": "M1a",
+                        "description": "M1a"
+                    },
+                    {
+                        "key": "M1b",
+                        "name": "M1b",
+                        "description": "M1b"
+                    },
+                    {
+                        "key": "M1c",
+                        "name": "M1c",
+                        "description": "M1c"
+                    },
+                    {
+                        "key": "M1d",
+                        "name": "M1d",
+                        "description": "M1d"
+                    }
+                ]
+            },
+            {
+                "key": "399566009",
+                "name": "TNM-RY-Präfix",
+                "system": "",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "r",
+                        "name": "r",
+                        "description": "r"
+                    },
+                    {
+                        "key": "y",
+                        "name": "y",
+                        "description": "y"
+                    }
+                ]
+            },
+            {
+                "key": "year_of_diagnosis",
+                "name": "Diagnosejahr",
+                "system": "",
+                "fieldType": "number",
+                "type": "BETWEEN",
+                "criteria": []
+            },
+            {
+                "key": "age_at_diagnosis",
+                "name": "Alter bei Erstdiagnose",
+                "system": "",
+                "fieldType": "number",
+                "type": "BETWEEN",
+                "criteria": []
+            }
+        ]
+    },
+    {
+        "key": "general_data",
+        "name": "Allgemeine Daten",
+        "fieldType": "group",
+        "childCategories": [
+            {
+                "key": "gender",
+                "name": "Geschlecht",
+                "system": "",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "male",
+                        "name": "male",
+                        "description": "männlich"
+                    },
+                    {
+                        "key": "female",
+                        "name": "female",
+                        "description": "weiblich"
+                    },
+                    {
+                        "key": "other",
+                        "name": "other",
+                        "description": "Sonstiges / intersexuell"
+                    },
+                    {
+                        "key": "unknown",
+                        "name": "unknown",
+                        "description": "unbekannt"
+                    }
+                ]
+            },
+            {
+                "key": "67162-8",
+                "name": "Vitalstatus",
+                "system": "",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "L",
+                        "name": "L",
+                        "description": "lebend"
+                    },
+                    {
+                        "key": "T",
+                        "name": "T",
+                        "description": "verstorben"
+                    },
+                    {
+                        "key": "A",
+                        "name": "A",
+                        "description": "lost to follow-up"
+                    }
+                ]
+            },
+            {
+                "key": "72166-2",
+                "name": "Raucherstatus",
+                "system": "",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "criteria": [
+                    {
+                        "key": "LA15920-4",
+                        "name": "LA15920-4",
+                        "description": "Ehemaliger Raucher"
+                    },
+                    {
+                        "key": "LA18978-9",
+                        "name": "LA18978-9",
+                        "description": "Niemals Raucher"
+                    },
+                    {
+                        "key": "LA18979-7",
+                        "name": "LA18979-7",
+                        "description": "Raucher, aktueller Status unbekannt"
+                    }
+                ]
+            },
+            {
+                "key": "89247-1",
+                "name": "ecog",
+                "system": "",
+                "fieldType": "single-select",
+                "type": "EQUALS",
+                "infoButtonText": ["LA9622-7 - Voll aktiv, in der Lage, alle Leistungen vor der Erkrankung ohne Einschränkung zu erbringen"],
+                "criteria": [
+                    {
+                        "key": "LA9622-7",
+                        "name": "LA9622-7",
+                        "description": "Voll aktiv, in der Lage, alle Leistungen vor der Erkrankung ohne Einschränkung zu erbringen"
+                    },
+                    {
+                        "key": "LA9623-5",
+                        "name": "LA9623-5",
+                        "description": "Bei körperlich anstrengender Tätigkeit eingeschränkt, aber gehfähig und in der Lage, leichte oder sitzende Arbeiten zu verrichten, z. B. leichte Hausarbeit, Büroarbeit"
+                    },
+                    {
+                        "key": "LA9624-3",
+                        "name": "LA9624-3",
+                        "description": "Gehfähig und in der Lage, sich selbst zu versorgen, aber nicht in der Lage, Arbeitstätigkeiten zu verrichten. Mehr als 50 % der wachen Zeit auf den Beinen"
+                    },
+                    {
+                        "key": "LA9625-0",
+                        "name": "LA9625-0",
+                        "description": "Nur begrenzt in der Lage, sich selbst zu versorgen, mehr als 50 % der wachen Zeit an das Bett oder den Stuhl gefesselt"
+                    },
+                    {
+                        "key": "LA9626-8",
+                        "name": "LA9626-8",
+                        "description": "Völlig behindert. Kann sich nicht mehr selbst versorgen. Völlig an das Bett oder den Stuhl gefesselt"
+                    },
+                    {
+                        "key": "LA9627-6",
+                        "name": "LA9627-6",
+                        "description": "Tot"
+                    }
+                ]
+            }
+        ]
+    }
+]

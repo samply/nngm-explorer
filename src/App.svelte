@@ -1,17 +1,40 @@
 <script lang="ts">
-	import options from './config/options.json';
 	import {
 		barChartBackgroundColors,
 		genderHeaders,
-		measures
+		vitalstatusHeaders
+		//measures
 	} from './config/environment';
-	import type { LensDataPasser } from '@samply/lens';
-	import { catalogueText, getStaticCatalogue } from './services/catalogue.service';
+	import { browser } from '$app/environment';
+	//import options from './config/options.json';
+	import {
+		catalogueText
+		//fetchData
+	} from './services/catalogue.service';
+	//import ResultTable from './components/ResultTable.svelte';
+	//import { backendCall } from './services/backend.service';
+	//import { onMount } from 'svelte';
+	//import { requestBackend } from './services/backends/backend.service';
+	import { getAst, setSiteResult } from '@samply/lens';
+	import '@samply/lens/style.css';
+	//import 'C:/IntelliJ - Projekte/nngm-lens-svelte/node_modules/@samply/lens/dist/style.css'
+	import '@samply/lens';
+	//import type { LensDataPasser, QueryEvent } from '@samply/lens';
+	//import type { LensDataPasser } from '@samply/lens';
+	import ScrollToTop from './services/tools/top-anker.svelte';
 
+	//let catalogueDataPromise = getStaticCatalogue('catalogues/catalogue-example.json');
 	let catalogueopen = false;
-	let catalogueDataPromise = getStaticCatalogue('catalogues/catalogue-example.json');
+	//let catalogueCollapsable = true;
+	//let dataPasser: LensDataPasser;
 
-	let dataPasser: LensDataPasser;
+	//const catalogueUrl = 'catalogues/catalogue-from-lens1.json';
+	//const optionsFilePath = 'config/options.json';
+
+	/*const jsonPromises: Promise<{
+		catalogueJSON: string;
+		optionsJSON: string;
+	}> = fetchData(catalogueUrl, optionsFilePath);*/
 
 	/**
 	 * The following functions are the API to the library stores (state)
@@ -43,16 +66,137 @@
 	// 	dataPasser.removeValueFromQueryAPI({ queryItem, value });
 	// 	getQuery();
 	// };
+	/*
+	let mobileNavOpen = false;
+	const toggleMobileNav = () => {
+		mobileNavOpen = !mobileNavOpen;
+	};
+
+	window.addEventListener('resize', () => {
+		if (window.innerWidth <= 768) {
+			mobileNavOpen = false;
+			catalogueCollapsable = true;
+		} else if (window.innerWidth > 768 && window.innerWidth < 1024) {
+			mobileNavOpen = true;
+			catalogueCollapsable = true;
+		} else if (window.innerWidth >= 1024) {
+			catalogueCollapsable = false;
+		}
+	});
+
+	if (window.innerWidth >= 1024) {
+		catalogueCollapsable = false;
+	}
+*/
+	/**
+	 * This event listener is triggered when the user clicks the search button
+	 */
+
+	/*let response: void;
+
+	window.addEventListener('emit-lens-query', (e) => {
+		const event = e as QueryEvent;
+		const { ast, updateResponse, abortController } = event.detail;
+		response = backendCall(ast, updateResponse, abortController);
+	});*/
+
+	if (browser) {
+		//window.addEventListener('emit-lens-query', (e) => {
+		//if (!dataPasser) return;
+		//const event = e as CustomEvent;
+		//const { ast, updateResponse, abortController } = event.detail;
+		//const criteria: string[] = dataPasser.getCriteriaAPI('diagnosis');
+		//requestBackend(ast, updateResponse, abortController, measures, criteria);
+		//});
+	}
+
+	import {
+		setOptions,
+		setCatalogue,
+		type LensOptions,
+		type Catalogue
+	} from '@samply/lens';
+	import options from './config/options.json';
+	import catalogue from './config/catalogue-from-lens1.json';
+	import { onMount } from 'svelte';
+	onMount(() => {
+		setOptions(options as LensOptions);
+		setCatalogue(catalogue as Catalogue);
+	});
+
+	window.addEventListener('lens-search-triggered', () => {
+		console.log('AST:', JSON.stringify(getAst()));
+
+		setSiteResult('Test1', {
+			totals: {
+				patients: 10,
+				samples: 100
+			},
+			stratifiers: {
+				gender: {
+					female: 9,
+					male: 3
+				},
+				diagnosis: {
+					'C34.0': 26,
+					'C34.2': 28,
+					'C35.8': 25,
+					'C36.0': 35
+				},
+				'75186-7': {
+					L: 9,
+					T: 3,
+					A: 0
+				}
+			}
+		});
+		setSiteResult('Test2', {
+			totals: {
+				patients: 20,
+				samples: 200
+			},
+			stratifiers: {
+				gender: {
+					female: 9,
+					male: 3
+				}
+			}
+		});
+	});
 </script>
 
 <header>
-	<div>
-		<!-- Add logo here -->
+	<div class="logo">
+		<a href="@">
+			<img
+				src="../assets/images/logo-nngm-nationales-netzwerk-genomische-medizin-lungenkrebs.svg"
+				alt="nNGM"
+			/>
+		</a>
+		<span class="ccp-header">Deutsche Krebshilfe (DKH)</span>
 	</div>
-	<h1>Lens2 Example (Title Here)</h1>
-	<div>
-		<!-- Add logo here -->
-	</div>
+	<!--<button class="burger-menu-button" on:click="{toggleMobileNav}">
+		<div></div>
+		<div></div>
+		<div></div>
+	</button>
+	{#if mobileNavOpen}
+		<div>
+			<nav>
+				<ul>
+					<li>
+						<a href="https://dashboard.eucaim.cancerimage.eu/">HOME</a>
+					</li>
+					<li>
+						<a href="https://catalogue.eucaim.cancerimage.eu/">PUBLIC CATALOGUE</a>
+					</li>
+					<li>
+						<a href="https://help.cancerimage.eu/#login">HELPDESK</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	{/if}-->
 </header>
 
 <main>
@@ -60,23 +204,28 @@
 		<div class="search-wrapper">
 			<lens-search-bar-multiple noMatchesFoundMessage="{'keine Ergebnisse gefunden'}"
 			></lens-search-bar-multiple>
-			<lens-info-button
+			<!--<lens-info-button
 				noQueryMessage="Leere Suchanfrage: Sucht nach allen Ergebnissen."
 				showQuery="{true}"
-			></lens-info-button>
+			></lens-info-button>-->
+			<lens-query-explain-button
+				noQueryMessage="Leere Suchanfrage: Sucht nach allen Ergebnissen."
+			></lens-query-explain-button>
 			<lens-search-button title="Suchen"></lens-search-button>
 		</div>
 	</div>
 	<div class="grid">
 		<div class="catalogue-wrapper">
 			<div class="catalogue">
-				<h2>Suchkriterien</h2>
-				<lens-info-button
-					message="{[
-						`Bei Patienten mit mehreren onkologischen Diagnosen, können sich ausgewählte Suchkriterien nicht nur auf eine Erkrankung beziehen, sondern auch auf Weitere.`,
-						`Innerhalb einer Kategorie werden verschiedene Ausprägungen mit einer „Oder-Verknüpfung“ gesucht; bei der Suche über mehrere Kategorien mit einer „Und-Verknüpfung“.`
-					]}"
-				></lens-info-button>
+				<h2>
+					Suchkriterien
+					<lens-info-button
+						message="{[
+							`Bei Patienten mit mehreren onkologischen Diagnosen, können sich ausgewählte Suchkriterien nicht nur auf eine Erkrankung beziehen, sondern auch auf Weitere.`,
+							`Innerhalb einer Kategorie werden verschiedene Ausprägungen mit einer „Oder-Verknüpfung“ gesucht; bei der Suche über mehrere Kategorien mit einer „Und-Verknüpfung“.`
+						]}"
+					></lens-info-button>
+				</h2>
 				<lens-catalogue
 					toggleIconUrl="right-arrow-svgrepo-com.svg"
 					addIconUrl="long-right-arrow-svgrepo-com.svg"
@@ -97,6 +246,7 @@
 				<lens-chart
 					title="Diagnose"
 					catalogueGroupCode="diagnosis"
+					dataKey="diagnosis"
 					chartType="bar"
 					indexAxis="y"
 					groupingDivider="."
@@ -120,6 +270,7 @@
 				<lens-chart
 					title="Geschlecht"
 					catalogueGroupCode="gender"
+					dataKey="gender"
 					chartType="pie"
 					displayLegends="{true}"
 					headers="{genderHeaders}"
@@ -139,6 +290,16 @@
 			</div>
 			<div class="chart-wrapper">
 				<lens-chart
+					title="Vitalstatus"
+					catalogueGroupCode="vital"
+					dataKey="75186-7"
+					chartType="pie"
+					displayLegends="{true}"
+					headers="{vitalstatusHeaders}"
+				></lens-chart>
+			</div>
+			<!--<div class="chart-wrapper">
+				<lens-chart
 					title="Proben"
 					catalogueGroupCode="sample_kind"
 					chartType="bar"
@@ -148,26 +309,45 @@
 					backgroundColor="{JSON.stringify(barChartBackgroundColors)}"
 				>
 				</lens-chart>
-			</div>
+			</div>-->
 		</div>
+	</div>
+	<div class="credits">
+		<p>
+			This federated search was made with the open source <a
+				href="https://github.com/samply/">Samply tools</a
+			>
+			(<a href="https://github.com/samply/lens/">Lens</a>,
+			<a href="https://github.com/samply/beam/">Beam</a>,
+			<a href="https://github.com/samply/focus/">Focus</a>,
+			<a href="https://github.com/samply/bridgehead/">Bridgehead</a>), created by the
+			<a href="https://www.dkfz.de/en/verbis/">German Cancer Research Center (DKFZ)</a>.
+		</p>
 	</div>
 </main>
 
 <footer>
-	<div class="made_with">
-		Made with ♥ and <a href="https://github.com/samply/lens">samply/lens-core</a>
-	</div>
 	<div class="logo">
-		<img src="../Deutsches_Krebsforschungszentrum_Logo.svg" alt="Logo des DKFZ" />
+		<a href="@">
+			<img
+				src="../assets/images/logo-nngm-nationales-netzwerk-genomische-medizin-lungenkrebs.svg"
+				alt=""
+			/>
+		</a>
+	</div>
+	<div class="links">
+		<a href="@">PRIVACY POLICY</a>
+		<a href="http://localhost:4200/#">COOKIES POLICY</a>
 	</div>
 </footer>
-
-{#await catalogueDataPromise}
-	Loading catalogue...
-{:then catalogueData}
-	<lens-options {options} {catalogueData} {measures}></lens-options>
+<ScrollToTop />
+<!-- here it waits on all promises to resolve and fills in the parameters -->
+<!--{#await jsonPromises}
+	Loading data...
+{:then { optionsJSON, catalogueJSON }}
+	<lens-options {catalogueJSON} {optionsJSON} {measures}></lens-options>
 {:catch someError}
-	System error: {someError.message}.
-{/await}
+	System error: {someError.message}
+{/await}-->
 
-<lens-data-passer bind:this="{dataPasser}"></lens-data-passer>
+<!--<lens-data-passer bind:this="{dataPasser}"></lens-data-passer>-->

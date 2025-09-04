@@ -17,7 +17,7 @@
 //
 // export default config;
 
-import adapter from "@sveltejs/adapter-node";
+import adapter from '@sveltejs/adapter-node';
 import sveltePreprocess from 'svelte-preprocess';
 
 export default {
@@ -25,7 +25,7 @@ export default {
 	// for more information about preprocessors
 	preprocess: sveltePreprocess(),
 
-    kit: {
-        adapter: adapter(),
-    },
+	kit: {
+		adapter: adapter()
+	}
 };

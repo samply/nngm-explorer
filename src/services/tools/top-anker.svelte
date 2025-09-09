@@ -21,7 +21,7 @@
 
 <button
 	class="scroll-to-top {isVisible ? 'visible' : ''}"
-	on:click="{scrollToTop}"
+	on:click={scrollToTop}
 	aria-label="Scroll to top"
 >
 	<svg

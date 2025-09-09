@@ -238,7 +238,7 @@
 
 <header>
 	<div class="logo">
-		<a href="@">
+		<a href="https://nngm.de">
 			<img
 				src="../assets/images/logo-nngm-nationales-netzwerk-genomische-medizin-lungenkrebs.svg"
 				alt="nNGM"
@@ -273,7 +273,7 @@
 <main>
 	<div class="search">
 		<div class="search-wrapper">
-			<lens-search-bar-multiple noMatchesFoundMessage="{'keine Ergebnisse gefunden'}"
+			<lens-search-bar-multiple noMatchesFoundMessage="keine Ergebnisse gefunden"
 			></lens-search-bar-multiple>
 			<!--<lens-info-button
 				noQueryMessage="Leere Suchanfrage: Sucht nach allen Ergebnissen."
@@ -291,18 +291,18 @@
 				<h2>
 					Suchkriterien
 					<lens-info-button
-						message="{[
+						message={[
 							`Bei Patienten mit mehreren onkologischen Diagnosen, können sich ausgewählte Suchkriterien nicht nur auf eine Erkrankung beziehen, sondern auch auf Weitere.`,
 							`Innerhalb einer Kategorie werden verschiedene Ausprägungen mit einer „Oder-Verknüpfung“ gesucht; bei der Suche über mehrere Kategorien mit einer „Und-Verknüpfung“.`
-						]}"
+						]}
 					></lens-info-button>
 				</h2>
 				<lens-catalogue
 					toggleIconUrl="right-arrow-svgrepo-com.svg"
 					addIconUrl="long-right-arrow-svgrepo-com.svg"
 					infoIconUrl="info-circle-svgrepo-com.svg"
-					texts="{catalogueText}"
-					toggle="{{ collapsable: false, open: catalogueopen }}"
+					texts={catalogueText}
+					toggle={{ collapsable: false, open: catalogueopen }}
 				></lens-catalogue>
 			</div>
 		</div>
@@ -325,7 +325,7 @@
 					filterRegex="^[CD].*"
 					xAxisTitle="Anzahl der Diagnosen"
 					yAxisTitle="ICD-10-Codes"
-					backgroundColor="{JSON.stringify(barChartBackgroundColors)}"
+					backgroundColor={JSON.stringify(barChartBackgroundColors)}
 				></lens-chart>
 			</div>
 
@@ -343,8 +343,8 @@
 					catalogueGroupCode="gender"
 					dataKey="gender"
 					chartType="pie"
-					displayLegends="{true}"
-					headers="{genderHeaders}"
+					displayLegends={true}
+					headers={genderHeaders}
 				></lens-chart>
 			</div>
 			<div class="chart-wrapper chart-age-distribution">
@@ -352,11 +352,11 @@
 					title="Alter bei Erstdiagnose"
 					catalogueGroupCode="age_at_diagnosis"
 					chartType="bar"
-					groupRange="{10}"
+					groupRange={10}
 					filterRegex="^(1*[12]*[0-9])"
 					xAxisTitle="Alter"
 					yAxisTitle="Anzahl der Primärdiagnosen"
-					backgroundColor="{JSON.stringify(barChartBackgroundColors)}"
+					backgroundColor={JSON.stringify(barChartBackgroundColors)}
 				></lens-chart>
 			</div>
 			<div class="chart-wrapper">
@@ -365,8 +365,8 @@
 					catalogueGroupCode="vital"
 					dataKey="75186-7"
 					chartType="pie"
-					displayLegends="{true}"
-					headers="{vitalstatusHeaders}"
+					displayLegends={true}
+					headers={vitalstatusHeaders}
 				></lens-chart>
 			</div>
 			<!--<div class="chart-wrapper">
@@ -399,7 +399,7 @@
 
 <footer>
 	<div class="logo">
-		<a href="@">
+		<a href="https://nngm.de">
 			<img
 				src="../assets/images/logo-nngm-nationales-netzwerk-genomische-medizin-lungenkrebs.svg"
 				alt=""
@@ -407,7 +407,7 @@
 		</a>
 	</div>
 	<div class="links">
-		<a href="@">PRIVACY POLICY</a>
+		<a href="http://localhost:4200/#">PRIVACY POLICY</a>
 		<a href="http://localhost:4200/#">COOKIES POLICY</a>
 	</div>
 </footer>

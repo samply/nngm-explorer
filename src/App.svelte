@@ -15,7 +15,7 @@
 	//import { backendCall } from './services/backend.service';
 	//import { onMount } from 'svelte';
 	//import { requestBackend } from './services/backends/backend.service';
-	import { getAst, setSiteResult } from '@samply/lens';
+	//import { getAst, setSiteResult } from '@samply/lens';
 	import '@samply/lens/style.css';
 	//import 'C:/IntelliJ - Projekte/nngm-lens-svelte/node_modules/@samply/lens/dist/style.css'
 	import '@samply/lens';
@@ -110,6 +110,7 @@
 		//});
 	}
 
+	/*
 	import {
 		setOptions,
 		setCatalogue,
@@ -162,6 +163,76 @@
 				}
 			}
 		});
+	});*/
+
+	import type { Catalogue, SpotResult } from '@samply/lens';
+	import {
+		setOptions,
+		setCatalogue,
+		clearSiteResults,
+		markSiteClaimed,
+		setSiteResult,
+		querySpot,
+		getAst,
+		buildLibrary,
+		buildMeasure
+	} from '@samply/lens';
+	import { translateAstToCql } from './lib/ast-to-cql-translator';
+	import { measures } from './lib/measures';
+	import { onMount } from 'svelte';
+	import { env } from '$env/dynamic/public';
+	import { options } from './lib/env-options';
+	import catalogueProd from './config/catalogue.json';
+	import catalogueTest from './config/catalogue-from-lens1.json';
+
+	let abortController = new AbortController();
+	window.addEventListener('lens-search-triggered', () => {
+		abortController.abort();
+		abortController = new AbortController();
+
+		// AST to CQL translation
+		const cql = translateAstToCql(
+			getAst(),
+			false,
+			'DKTK_STRAT_DEF_IN_INITIAL_POPULATION',
+			measures
+		);
+		const lib = buildLibrary(cql);
+		const measure = buildMeasure(
+			lib.url,
+			measures.map((m) => m.measure)
+		);
+
+		clearSiteResults();
+		const query = btoa(
+			JSON.stringify({
+				lang: 'cql',
+				lib,
+				measure
+			})
+		);
+		querySpot(query, abortController.signal, (result: SpotResult) => {
+			const site = result.from.split('.')[1];
+			if (result.status === 'claimed') {
+				markSiteClaimed(site);
+			} else if (result.status === 'succeeded') {
+				const siteResult = JSON.parse(atob(result.body));
+				console.log(siteResult);
+				setSiteResult(site, siteResult);
+			} else {
+				console.error(`Site ${site} failed with status ${result.status}:`, result.body);
+			}
+		});
+	});
+	onMount(() => {
+		setOptions(options);
+
+		// Set the catalogue based on the environment
+		let catalogue = catalogueProd as Catalogue;
+		if (env.PUBLIC_ENVIRONMENT === 'test') {
+			catalogue = catalogueTest as Catalogue;
+		}
+		setCatalogue(catalogue);
 	});
 </script>
 

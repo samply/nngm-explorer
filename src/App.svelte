@@ -350,13 +350,13 @@
 			<div class="chart-wrapper chart-age-distribution">
 				<lens-chart
 					title="Alter bei Erstdiagnose"
-					catalogueGroupCode="age_at_diagnosis"
+					dataKey="age_at_diagnosis"
 					chartType="bar"
 					groupRange={10}
 					filterRegex="^(1*[12]*[0-9])"
 					xAxisTitle="Alter"
 					yAxisTitle="Anzahl der Primärdiagnosen"
-					backgroundColor={JSON.stringify(barChartBackgroundColors)}
+					backgroundColor={barChartBackgroundColors}
 				></lens-chart>
 			</div>
 			<div class="chart-wrapper">

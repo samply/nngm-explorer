@@ -332,12 +332,57 @@ export const dktkMonoObservationMeasure: FhirMeasureItem = {
   `
 };
 
+const nngmDiagnosisMeasure: FhirMeasureItem = {
+	key: 'diagnosis',
+	measure: {
+		code: {
+			text: 'diagnosis'
+		},
+		extension: [
+			{
+				url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis',
+				valueCode: 'Condition'
+			}
+		],
+		population: [
+			{
+				code: {
+					coding: [
+						{
+							system: 'http://terminology.hl7.org/CodeSystem/measure-population',
+							code: 'initial-population'
+						}
+					]
+				},
+				criteria: {
+					language: 'text/cql-identifier',
+					expression: 'Diagnosis'
+				}
+			}
+		],
+		stratifier: [
+			{
+				code: {
+					text: 'diagnosis'
+				},
+				criteria: {
+					language: 'text/cql-identifier',
+					expression: 'DiagnosisCode'
+				}
+			}
+		]
+	},
+	cql: `
+DKTK_STRAT_DIAGNOSIS_STRATIFIER
+`
+};
 export const measures: FhirMeasureItem[] = [
 	dktkPatientsMeasure,
-	dktkDiagnosisMeasure,
+	//dktkDiagnosisMeasure,
 	dktkSpecificSpecimenMeasure,
 	dktkProceduresMeasure,
 	dktkMedicationStatementsMeasure,
 	dktkHistologyMeasure,
-	dktkMonoObservationMeasure
+	dktkMonoObservationMeasure,
+	nngmDiagnosisMeasure
 ];

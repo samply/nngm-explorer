@@ -6,66 +6,15 @@
 		//measures
 	} from './config/environment';
 	import { browser } from '$app/environment';
-	//import options from './config/options.json';
-	import {
-		catalogueText
-		//fetchData
-	} from './services/catalogue.service';
-	//import ResultTable from './components/ResultTable.svelte';
-	//import { backendCall } from './services/backend.service';
-	//import { onMount } from 'svelte';
-	//import { requestBackend } from './services/backends/backend.service';
-	//import { getAst, setSiteResult } from '@samply/lens';
+	import { catalogueText } from './services/catalogue.service';
 	import '@samply/lens/style.css';
 	//import 'C:/IntelliJ - Projekte/nngm-lens-svelte/node_modules/@samply/lens/dist/style.css'
 	import '@samply/lens';
-	//import type { LensDataPasser, QueryEvent } from '@samply/lens';
-	//import type { LensDataPasser } from '@samply/lens';
 	import ScrollToTop from './services/tools/top-anker.svelte';
 
-	//let catalogueDataPromise = getStaticCatalogue('catalogues/catalogue-example.json');
 	let catalogueopen = false;
 	//let catalogueCollapsable = true;
-	//let dataPasser: LensDataPasser;
 
-	//const catalogueUrl = 'catalogues/catalogue-from-lens1.json';
-	//const optionsFilePath = 'config/options.json';
-
-	/*const jsonPromises: Promise<{
-		catalogueJSON: string;
-		optionsJSON: string;
-	}> = fetchData(catalogueUrl, optionsFilePath);*/
-
-	/**
-	 * The following functions are the API to the library stores (state)
-	 * here you get information to use in your application
-	 * or manipulate the stores
-	 * use if needed and import types from @samply/lens
-	 */
-
-	// const getQuery = (): void => {
-	// 	console.log('getQuery()', dataPasser.getQueryAPI());
-	// };
-
-	// const getResponse = (): void => {
-	// 	console.log('getResponse()', dataPasser.getResponseAPI());
-	// };
-
-	// const getAST = (): void => {
-	// 	console.log('getAst()', dataPasser.getAstAPI());
-	// };
-
-	// const removeItem = (queryObject: QueryItem): void => {
-	// 	console.log('removeItem()', queryObject);
-	// 	dataPasser.removeItemFromQuyeryAPI({ queryObject });
-	// 	getQuery();
-	// };
-
-	// const removeValue = (queryItem: QueryItem, value: QueryValue): void => {
-	// 	console.log('removeValue()', queryItem, value);
-	// 	dataPasser.removeValueFromQueryAPI({ queryItem, value });
-	// 	getQuery();
-	// };
 	/*
 	let mobileNavOpen = false;
 	const toggleMobileNav = () => {
@@ -88,42 +37,8 @@
 		catalogueCollapsable = false;
 	}
 */
-	/**
-	 * This event listener is triggered when the user clicks the search button
-	 */
-
-	/*let response: void;
-
-	window.addEventListener('emit-lens-query', (e) => {
-		const event = e as QueryEvent;
-		const { ast, updateResponse, abortController } = event.detail;
-		response = backendCall(ast, updateResponse, abortController);
-	});*/
-
-	if (browser) {
-		//window.addEventListener('emit-lens-query', (e) => {
-		//if (!dataPasser) return;
-		//const event = e as CustomEvent;
-		//const { ast, updateResponse, abortController } = event.detail;
-		//const criteria: string[] = dataPasser.getCriteriaAPI('diagnosis');
-		//requestBackend(ast, updateResponse, abortController, measures, criteria);
-		//});
-	}
 
 	/*
-	import {
-		setOptions,
-		setCatalogue,
-		type LensOptions,
-		type Catalogue
-	} from '@samply/lens';
-	import options from './config/options.json';
-	import catalogue from './config/catalogue-from-lens1.json';
-	import { onMount } from 'svelte';
-	onMount(() => {
-		setOptions(options as LensOptions);
-		setCatalogue(catalogue as Catalogue);
-	});
 
 	window.addEventListener('lens-search-triggered', () => {
 		console.log('AST:', JSON.stringify(getAst()));
@@ -325,7 +240,7 @@
 					filterRegex="^[CD].*"
 					xAxisTitle="Anzahl der Diagnosen"
 					yAxisTitle="ICD-10-Codes"
-					backgroundColor={JSON.stringify(barChartBackgroundColors)}
+					backgroundColor={barChartBackgroundColors}
 				></lens-chart>
 			</div>
 
@@ -412,13 +327,3 @@
 	</div>
 </footer>
 <ScrollToTop />
-<!-- here it waits on all promises to resolve and fills in the parameters -->
-<!--{#await jsonPromises}
-	Loading data...
-{:then { optionsJSON, catalogueJSON }}
-	<lens-options {catalogueJSON} {optionsJSON} {measures}></lens-options>
-{:catch someError}
-	System error: {someError.message}
-{/await}-->
-
-<!--<lens-data-passer bind:this="{dataPasser}"></lens-data-passer>-->

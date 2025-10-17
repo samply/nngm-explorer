@@ -373,7 +373,7 @@ const nngmDiagnosisMeasure: FhirMeasureItem = {
 		]
 	},
 	cql: `
-DKTK_STRAT_DIAGNOSIS_STRATIFIER
+NNGM_STRAT_DIAGNOSIS_STRATIFIER
 `
 };
 export const measures: FhirMeasureItem[] = [

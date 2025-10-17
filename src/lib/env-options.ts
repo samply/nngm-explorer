@@ -4,7 +4,7 @@ import optionsProd from '../config/options.json';
 import optionsTest from '../config/options-test.json';
 
 /** The options depending on the environment */
-export let options: Options = optionsProd;
+export let options: Options = optionsTest;
 if (env.PUBLIC_ENVIRONMENT === 'test') {
 	options = optionsTest;
 }

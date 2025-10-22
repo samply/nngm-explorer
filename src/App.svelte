@@ -104,7 +104,7 @@
 	window.addEventListener('lens-search-triggered', () => {
 		abortController.abort();
 		abortController = new AbortController();
-
+/*
 		// AST to CQL translation
 		const cql = translateAstToCql(
 			getAst(),
@@ -117,14 +117,22 @@
 			lib.url,
 			measures.map((m) => m.measure)
 		);
-
+*/
 		clearSiteResults();
-		const query = btoa(
+		/*const query = btoa(
 			JSON.stringify({
 				lang: 'cql',
 				lib,
 				measure
 			})
+		);*/
+		const query = btoa(
+				JSON.stringify({
+					lang: "ast",
+					payload: btoa(
+							JSON.stringify({ ast: getAst(), id: crypto.randomUUID() }),
+					),
+				}),
 		);
 		querySpot(query, abortController.signal, (result: SpotResult) => {
 			const site = result.from.split('.')[1];

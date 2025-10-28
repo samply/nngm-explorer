@@ -11,4 +11,3 @@ export const vitalstatusHeaders: Map<string, string> = new Map<string, string>()
 	.set('A', 'lost to follow-up');
 
 export const barChartBackgroundColors: string[] = ['#4dc9f6', '#3da4c7'];
-

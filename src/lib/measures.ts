@@ -63,7 +63,6 @@ DKTK_STRAT_DECEASED_STRATIFIER
 `
 };
 
-
 const dktkSpecificSpecimenMeasure: FhirMeasureItem = {
 	key: 'specimen',
 	measure: {

@@ -36,8 +36,6 @@
 	}
 */
 
-
-
 	import type { Catalogue, SpotResult } from '@samply/lens';
 	import {
 		setOptions,
@@ -63,12 +61,10 @@
 		clearSiteResults();
 
 		const query = btoa(
-				JSON.stringify({
-					lang: "ast",
-					payload: btoa(
-							JSON.stringify({ ast: getAst(), id: crypto.randomUUID() }),
-					),
-				}),
+			JSON.stringify({
+				lang: 'ast',
+				payload: btoa(JSON.stringify({ ast: getAst(), id: crypto.randomUUID() }))
+			})
 		);
 		querySpot(query, abortController.signal, (result: SpotResult) => {
 			const site = result.from.split('.')[1];

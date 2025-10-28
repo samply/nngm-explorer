@@ -4,7 +4,6 @@
 		genderHeaders,
 		vitalstatusHeaders
 	} from './config/environment';
-	import { browser } from '$app/environment';
 	import { catalogueText } from './services/catalogue.service';
 	import '@samply/lens/style.css';
 	import '@samply/lens';

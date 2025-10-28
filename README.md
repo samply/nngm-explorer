@@ -1,42 +1,42 @@
-# Lens2 Demo Project
+# nngm-explorer
 
-This repository provides the most fundamental building blocks needed to build your very own interface using the Lens2 library.
+nNGM Explorer based on Lens 2.
 
----
+# sv
 
-## Implementation Guide 
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-#### Catalogue
-<!-- TODO -->
+## Creating a project
 
-#### CQL Parsing 
-<!-- TODO -->
+If you're seeing this, you've probably already done this step. Congrats!
 
-#### Integrate Data Structure 
-<!-- TODO -->
+```sh
+# create a new project in the current directory
+npx sv create
 
----
+# create a new project in my-app
+npx sv create my-app
+```
 
-## Quickstart Instructions 
+## Developing
 
-To start a development server, run the command:
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-```bash
+```sh
 npm run dev
 
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
-
-
 ```
-To create a production version of your application:
 
-```bash
+## Building
+
+To create a production version of your app:
+
+```sh
 npm run build
 ```
 
 You can preview the production build with `npm run preview`.
 
----
-
-*Made with ♥ using [samply/lens-core](https://github.com/samply/lens)*
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

@@ -3,12 +3,10 @@
 		barChartBackgroundColors,
 		genderHeaders,
 		vitalstatusHeaders
-		//measures
 	} from './config/environment';
 	import { browser } from '$app/environment';
 	import { catalogueText } from './services/catalogue.service';
 	import '@samply/lens/style.css';
-	//import 'C:/IntelliJ - Projekte/nngm-lens-svelte/node_modules/@samply/lens/dist/style.css'
 	import '@samply/lens';
 	import ScrollToTop from './services/tools/top-anker.svelte';
 
@@ -38,47 +36,7 @@
 	}
 */
 
-	/*
 
-	window.addEventListener('lens-search-triggered', () => {
-		console.log('AST:', JSON.stringify(getAst()));
-
-		setSiteResult('Test1', {
-			totals: {
-				patients: 10,
-				samples: 100
-			},
-			stratifiers: {
-				gender: {
-					female: 9,
-					male: 3
-				},
-				diagnosis: {
-					'C34.0': 26,
-					'C34.2': 28,
-					'C35.8': 25,
-					'C36.0': 35
-				},
-				'75186-7': {
-					L: 9,
-					T: 3,
-					A: 0
-				}
-			}
-		});
-		setSiteResult('Test2', {
-			totals: {
-				patients: 20,
-				samples: 200
-			},
-			stratifiers: {
-				gender: {
-					female: 9,
-					male: 3
-				}
-			}
-		});
-	});*/
 
 	import type { Catalogue, SpotResult } from '@samply/lens';
 	import {
@@ -88,12 +46,9 @@
 		markSiteClaimed,
 		setSiteResult,
 		querySpot,
-		getAst,
-		buildLibrary,
-		buildMeasure
+		getAst
 	} from '@samply/lens';
-	import { translateAstToCql } from './lib/ast-to-cql-translator';
-	import { measures } from './lib/measures';
+
 	import { onMount } from 'svelte';
 	import { env } from '$env/dynamic/public';
 	import { options } from './lib/env-options';
@@ -104,28 +59,9 @@
 	window.addEventListener('lens-search-triggered', () => {
 		abortController.abort();
 		abortController = new AbortController();
-/*
-		// AST to CQL translation
-		const cql = translateAstToCql(
-			getAst(),
-			false,
-			'DKTK_STRAT_DEF_IN_INITIAL_POPULATION',
-			measures
-		);
-		const lib = buildLibrary(cql);
-		const measure = buildMeasure(
-			lib.url,
-			measures.map((m) => m.measure)
-		);
-*/
+
 		clearSiteResults();
-		/*const query = btoa(
-			JSON.stringify({
-				lang: 'cql',
-				lib,
-				measure
-			})
-		);*/
+
 		const query = btoa(
 				JSON.stringify({
 					lang: "ast",

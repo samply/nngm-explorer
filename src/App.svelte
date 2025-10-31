@@ -4,7 +4,6 @@
 		genderHeaders,
 		vitalstatusHeaders
 	} from './config/environment';
-	import { browser } from '$app/environment';
 	import { catalogueText } from './services/catalogue.service';
 	import '@samply/lens/style.css';
 	import '@samply/lens';
@@ -36,8 +35,6 @@
 	}
 */
 
-
-
 	import type { Catalogue, SpotResult } from '@samply/lens';
 	import {
 		setOptions,
@@ -63,12 +60,10 @@
 		clearSiteResults();
 
 		const query = btoa(
-				JSON.stringify({
-					lang: "ast",
-					payload: btoa(
-							JSON.stringify({ ast: getAst(), id: crypto.randomUUID() }),
-					),
-				}),
+			JSON.stringify({
+				lang: 'ast',
+				payload: btoa(JSON.stringify({ ast: getAst(), id: crypto.randomUUID() }))
+			})
 		);
 		querySpot(query, abortController.signal, (result: SpotResult) => {
 			const site = result.from.split('.')[1];

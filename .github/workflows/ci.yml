@@ -22,7 +22,7 @@ jobs:
     needs: linting
     uses: samply/github-workflows/.github/workflows/docker-ci.yml@main
     with:
-      image-name: "samply/nngm_lens2"
+      image-name: 'samply/nngm_explorer'
       #push-to: auto
       #build-context: '.'
       #build-file: './Dockerfile'

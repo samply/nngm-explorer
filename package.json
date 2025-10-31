@@ -36,7 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@samply/lens": "^0.6.0",
+		"@samply/lens": "^0.6.2",
 		"chart.js": "^4.4.9",
 		"chartjs-plugin-datalabels": "^2.2.0",
 		"svelte-routing": "^2.13.0"

@@ -2,6 +2,7 @@
   "spotUrl": "http://localhost:8055",
   "language": "de",
   "siteMappings": {
+    "proxy2": "Proxy2 Test Server",
     "berlin": "Berlin (OBDS)",
     "berlin-test": "Berlin",
     "bonn": "Bonn",

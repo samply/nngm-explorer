@@ -8,7 +8,10 @@ vite.config.js.timestamp-*
 /documentation/types.js
 .env
 .vercel_build_output
-.svelte-kit
+.svelte-kit/generated
+.svelte-kit/types
+.svelte-kit/ambient.d.ts
+.svelte-kit/non-ambient.d.ts
 .cloudflare
 .pnpm-debug.log
 .netlify

@@ -42,18 +42,18 @@
 				"criteria": [
 					{
 						"key": "L",
-						"name": "L",
+						"name": "lebt",
 						"description": "lebt"
 					},
 					{
 						"key": "T",
-						"name": "T",
+						"name": "verstorben",
 						"description": "verstorben"
 					},
 					{
 						"key": "A",
-						"name": "A",
-						"description": "lost to follow up"
+						"name": "lost to follow-up",
+						"description": "lost to follow-up"
 					}
 				]
 			},
@@ -66,17 +66,17 @@
 				"criteria": [
 					{
 						"key": "LA15920-4",
-						"name": "LA15920-4",
+						"name": "Ehemaliger Raucher",
 						"description": "Ehemaliger Raucher"
 					},
 					{
 						"key": "LA18978-9",
-						"name": "LA18978-9",
+						"name": "Niemals Raucher",
 						"description": "Niemals Raucher"
 					},
 					{
 						"key": "LA18979-7",
-						"name": "LA18979-7",
+						"name": "Raucher, aktueller Status unbekannt",
 						"description": "Raucher, aktueller Status unbekannt"
 					}
 				]
@@ -88,37 +88,42 @@
 				"fieldType": "single-select",
 				"type": "EQUALS",
 				"infoButtonText": [
-					"LA9622-7 - Voll aktiv, in der Lage, alle Leistungen vor der Erkrankung ohne Einschränkung zu erbringen"
+					"LA9622-7 - Voll aktiv, in der Lage, alle Leistungen vor der Erkrankung ohne Einschränkung zu erbringen",
+					"LA9623-5 - Bei körperlich anstrengender Tätigkeit eingeschränkt, aber gehfähig und in der Lage, leichte oder sitzende Arbeiten zu verrichten, z. B. leichte Hausarbeit, Büroarbeit",
+					"LA9624-3 - Gehfähig und in der Lage, sich selbst zu versorgen, aber nicht in der Lage, Arbeitstätigkeiten zu verrichten. Mehr als 50 % der wachen Zeit auf den Beinen",
+					"LA9625-0 - Nur begrenzt in der Lage, sich selbst zu versorgen, mehr als 50 % der wachen Zeit an das Bett oder den Stuhl gefesselt",
+					"LA9626-8 - Völlig behindert. Kann sich nicht mehr selbst versorgen. Völlig an das Bett oder den Stuhl gefesselt",
+					"LA9627-6 - Tot"
 				],
 				"criteria": [
 					{
 						"key": "LA9622-7",
-						"name": "LA9622-7",
+						"name": "Voll aktiv",
 						"description": "Voll aktiv, in der Lage, alle Leistungen vor der Erkrankung ohne Einschränkung zu erbringen"
 					},
 					{
 						"key": "LA9623-5",
-						"name": "LA9623-5",
+						"name": "eingeschränkt",
 						"description": "Bei körperlich anstrengender Tätigkeit eingeschränkt, aber gehfähig und in der Lage, leichte oder sitzende Arbeiten zu verrichten, z. B. leichte Hausarbeit, Büroarbeit"
 					},
 					{
 						"key": "LA9624-3",
-						"name": "LA9624-3",
+						"name": "Gehfähig",
 						"description": "Gehfähig und in der Lage, sich selbst zu versorgen, aber nicht in der Lage, Arbeitstätigkeiten zu verrichten. Mehr als 50 % der wachen Zeit auf den Beinen"
 					},
 					{
 						"key": "LA9625-0",
-						"name": "LA9625-0",
+						"name": "begrenzt",
 						"description": "Nur begrenzt in der Lage, sich selbst zu versorgen, mehr als 50 % der wachen Zeit an das Bett oder den Stuhl gefesselt"
 					},
 					{
 						"key": "LA9626-8",
-						"name": "LA9626-8",
+						"name": "Völlig behindert",
 						"description": "Völlig behindert. Kann sich nicht mehr selbst versorgen. Völlig an das Bett oder den Stuhl gefesselt"
 					},
 					{
 						"key": "LA9627-6",
-						"name": "LA9627-6",
+						"name": "Tot",
 						"description": "Tot"
 					}
 				]

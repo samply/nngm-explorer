@@ -2,7 +2,9 @@
 	import {
 		barChartBackgroundColors,
 		genderHeaders,
-		vitalstatusHeaders
+		vitalstatusHeaders,
+		smokestatusHeaders,
+		ecogstatusHeaders
 	} from './config/environment';
 	import { catalogueText } from './services/catalogue.service';
 	import '@samply/lens/style.css';
@@ -217,10 +219,30 @@
 				<lens-chart
 					title="Vitalstatus"
 					catalogueGroupCode="vital"
-					dataKey="75186-7"
+					dataKey="67162-8"
 					chartType="pie"
 					displayLegends={true}
 					headers={vitalstatusHeaders}
+				></lens-chart>
+			</div>
+			<div class="chart-wrapper">
+				<lens-chart
+					title="Raucherstatus"
+					catalogueGroupCode="vital"
+					dataKey="72166-2"
+					chartType="pie"
+					displayLegends={true}
+					headers={smokestatusHeaders}
+				></lens-chart>
+			</div>
+			<div class="chart-wrapper">
+				<lens-chart
+					title="ecog"
+					catalogueGroupCode="vital"
+					dataKey="89247-1"
+					chartType="pie"
+					displayLegends={true}
+					headers={ecogstatusHeaders}
 				></lens-chart>
 			</div>
 			<!--<div class="chart-wrapper">

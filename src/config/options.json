@@ -14,7 +14,9 @@
 		"wuerzburg": "Würzburg",
 		"mannheim": "Mannheim",
 		"dktk-test": "DKTK-Test",
-		"hamburg": "Hamburg"
+		"hamburg": "Hamburg",
+		"nngm-test": "NDP",
+		"proxy2": "NDP"
 	},
 	"chartOptions": {
 		"patients": {
@@ -55,7 +57,7 @@
 				"Bei Patienten mit mehreren Erstdiagnosen werden auch Einträge angezeigt, die ggfs. außerhalb der Suchkriterien liegen. "
 			]
 		},
-		"75186-7": {
+		"67162-8": {
 			"hintText": [
 				"\"verstorben\": ein Todesdatum ist dokumentiert oder das aktuelle Lebensalter ist größer 123 Jahre.",
 				"\"lebend\": wird angenommen, wenn kein Todesdatum dokumentiert ist oder das aktuelle Lebensalter nicht 123 Jahre überschritten hat.",
@@ -65,6 +67,33 @@
 				"L": "lebt",
 				"T": "verstorben",
 				"A": "lost to follow-up"
+			}
+		},
+		"72166-2": {
+			"legendMapping": {
+				"LA15920-4": "Ehemaliger Raucher",
+				"LA18978-9": "Niemals Raucher",
+				"LA18979-7": "Raucher, aktueller Status unbekannt",
+				"unknown": "Unbekannt"
+			}
+		},
+
+		"89247-1": {
+			"hintText": [
+				"\"LA9622-7\": Voll aktiv, in der Lage, alle Leistungen vor der Erkrankung ohne Einschränkung zu erbringen",
+				"\"LA9623-5\": Bei körperlich anstrengender Tätigkeit eingeschränkt, aber gehfähig und in der Lage, leichte oder sitzende Arbeiten zu verrichten, z. B. leichte Hausarbeit, Büroarbeit",
+				"\"LA9624-3\": Gehfähig und in der Lage, sich selbst zu versorgen, aber nicht in der Lage, Arbeitstätigkeiten zu verrichten. Mehr als 50 % der wachen Zeit auf den Beinen",
+				"\"LA9625-0\": Nur begrenzt in der Lage, sich selbst zu versorgen, mehr als 50 % der wachen Zeit an das Bett oder den Stuhl gefesselt",
+				"\"LA9626-8\": Völlig behindert. Kann sich nicht mehr selbst versorgen. Völlig an das Bett oder den Stuhl gefesselt",
+				"\"LA9627-6\": Tot"
+			],
+			"legendMapping": {
+				"LA9622-7": "Voll aktiv",
+				"LA9623-5": "eingeschränkt",
+				"LA9624-3": "gehfähig",
+				"LA9625-0": "begrenzt",
+				"LA9626-8": "völlig behindert",
+				"LA9627-6": "Tot"
 			}
 		},
 		"therapy_of_tumor": {

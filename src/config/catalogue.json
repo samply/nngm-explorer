@@ -14381,38 +14381,50 @@
 			"Gibt an, ob für den Patienten ausgewählte Therapien dokumentiert wurden."
 		],
 		"system": "",
-		"fieldType": "single-select",
+		"fieldType": "group",
 		"type": "EQUALS",
-		"criteria": [
+		"childCategories": [
 			{
-				"key": "OP",
-				"name": "Operation",
-				"description": ""
+				"key": "op_st",
+				"name": "Chirurgische/Strahlentherapie",
+				"system": "",
+				"fieldType": "single-select",
+				"type": "EQUALS",
+				"infoButtonText": [],
+				"criteria": [
+					{
+						"key": "OP",
+						"name": "Operation",
+						"description": ""
+					},
+					{
+						"key": "ST",
+						"name": "Strahlentherapie",
+						"description": ""
+					}
+				]
 			},
 			{
-				"key": "ST",
-				"name": "Strahlentherapie",
-				"description": ""
-			},
-			{
-				"key": "CH",
-				"name": "Chemotherapie",
-				"description": ""
-			},
-			{
-				"key": "IM",
-				"name": "Immuntherapie",
-				"description": ""
-			},
-			{
-				"key": "HO",
-				"name": "Hormontherapie",
-				"description": ""
-			},
-			{
-				"key": "KM",
-				"name": "Knochenmarktransplantation",
-				"description": ""
+				"key": "system_therapy",
+				"name": "Systemtherapien",
+				"system": "",
+				"fieldType": "single-select",
+				"type": "EQUALS",
+				"infoButtonText": [],
+				"criteria": [
+					{
+						"key": "TKL",
+						"name": "TKL"
+					},
+					{
+						"key": "CH",
+						"name": "Chemotherapie"
+					},
+					{
+						"key": "IM",
+						"name": "Immuntherapie"
+					}
+				]
 			}
 		]
 	},
@@ -14461,138 +14473,6 @@
 					{
 						"key": "U",
 						"name": "Beurteilung unmöglich"
-					},
-					{
-						"key": "X",
-						"name": "Fehlende Angabe"
-					}
-				]
-			},
-			{
-				"key": "LA4583-6",
-				"name": "Lokales/regionäres Rezidiv",
-				"system": "",
-				"fieldType": "single-select",
-				"type": "EQUALS",
-				"infoButtonText": ["Beurteilung der Situation im Primärtumorbereich"],
-				"criteria": [
-					{
-						"key": "K",
-						"name": "Kein Tumor nachweisbar"
-					},
-					{
-						"key": "T",
-						"name": "Tumorreste (Residualtumor)"
-					},
-					{
-						"key": "P",
-						"name": "Tumorreste Residualtumor Progress"
-					},
-					{
-						"key": "N",
-						"name": "Tumorreste Residualtumor No Change"
-					},
-					{
-						"key": "R",
-						"name": "Lokalrezidiv"
-					},
-					{
-						"key": "F",
-						"name": "Fraglicher Befund"
-					},
-					{
-						"key": "U",
-						"name": "unbekannt"
-					},
-					{
-						"key": "X",
-						"name": "Fehlende Angabe"
-					}
-				]
-			},
-			{
-				"key": "LA4370-8",
-				"name": "Lymphknoten-Rezidiv",
-				"system": "",
-				"fieldType": "single-select",
-				"type": "EQUALS",
-				"infoButtonText": [
-					"Beurteilung der Situation im Bereich der regionären Lymphknoten."
-				],
-				"criteria": [
-					{
-						"key": "K",
-						"name": "Kein Lymphknotenbefall nachweisbar"
-					},
-					{
-						"key": "R",
-						"name": "Neu aufgetretenes Lymphknotenrezidiv"
-					},
-					{
-						"key": "T",
-						"name": "bekannter Lymphknotenbefall Residuen"
-					},
-					{
-						"key": "P",
-						"name": "bekannter Lymphknotenbefall Progress"
-					},
-					{
-						"key": "N",
-						"name": "bekannter Lymphknotenbefall No Change"
-					},
-					{
-						"key": "F",
-						"name": "Fraglicher Befund"
-					},
-					{
-						"key": "U",
-						"name": "unbekannt"
-					},
-					{
-						"key": "X",
-						"name": "Fehlende Angabe"
-					}
-				]
-			},
-			{
-				"key": "LA4226-2",
-				"name": "Fernmetastasen",
-				"system": "",
-				"fieldType": "single-select",
-				"type": "EQUALS",
-				"infoButtonText": ["Beurteilung der Situation im Bereich der Fernmetastasen."],
-				"criteria": [
-					{
-						"key": "K",
-						"name": "Keine Fernmetastasen nachweisbar"
-					},
-					{
-						"key": "M",
-						"name": "Verbliebene Fernmetastase(n)"
-					},
-					{
-						"key": "R",
-						"name": "Neu aufgetretene Fernmetastase(n) bzw. Metastasenrezidiv"
-					},
-					{
-						"key": "T",
-						"name": "Fernmetastasen Residuen"
-					},
-					{
-						"key": "P",
-						"name": "Fernmetastasen Progress"
-					},
-					{
-						"key": "N",
-						"name": "Fernmetastasen No Change"
-					},
-					{
-						"key": "F",
-						"name": "Fraglicher Befund"
-					},
-					{
-						"key": "U",
-						"name": "Unbekannt"
 					},
 					{
 						"key": "X",
@@ -14684,80 +14564,1158 @@
 						"name": "Vollblut"
 					},
 					{
-						"key": "blood-serum",
-						"name": "Serum"
-					},
-					{
-						"key": "blood-plasma",
-						"name": "Plasma"
-					},
-					{
-						"key": "buffy-coat",
-						"name": "Buffy Coat",
-						"description": ""
-					},
-					{
-						"key": "peripheral-blood-cells-vital",
-						"name": "Periphere mononukleäre Blutzellen (PBMC)",
-						"description": ""
-					},
-					{
 						"key": "dried-whole-blood",
 						"name": "Blutkarten",
 						"description": ""
-					},
-					{
-						"key": "urine",
-						"name": "Urin"
-					},
-					{
-						"key": "swab",
-						"name": "Abstrich",
-						"description": ""
-					},
-					{
-						"key": "ascites",
-						"name": "Aszites",
-						"description": ""
-					},
-					{
-						"key": "csf-liquor",
-						"name": "Liquor",
-						"description": "Liquor/CSF"
-					},
-					{
-						"key": "stool-faeces",
-						"name": "Stuhl",
-						"description": ""
-					},
-					{
-						"key": "bone-marrow",
-						"name": "Knochenmark"
-					},
-					{
-						"key": "saliva",
-						"name": "Speichel",
-						"description": ""
-					},
-					{
-						"key": "liquid-other",
-						"name": "Flüssigprobe, andere",
-						"description": ""
-					},
-					{
-						"key": "dna",
-						"name": "DNA"
-					},
-					{
-						"key": "rna",
-						"name": "RNA"
-					},
-					{
-						"key": "derivative-other",
-						"name": "Derivat, andere",
-						"description": ""
 					}
 				]
+			}
+		]
+	},
+	{
+		"fieldType": "group",
+		"key": "MolecularMarker1",
+		"name": "Molekulare Marker",
+		"childCategories": [
+			{
+				"key": "observationMolecularMarkerName",
+				"name": "Gen",
+				"system": "http://www.genenames.org",
+				"fieldType": "autocomplete",
+				"type": "EQUALS",
+				"criteria": [
+					{
+						"key": "SMARCB1",
+						"name": "SMARCB1",
+						"description": "SWI/SNF related BAF chromatin remodeling complex subunit B1"
+					},
+					{
+						"key": "CHEK1",
+						"name": "CHEK1",
+						"description": "checkpoint kinase 1"
+					},
+					{
+						"key": "AKT3",
+						"name": "AKT3",
+						"description": "AKT serine/threonine kinase 3"
+					},
+					{
+						"key": "MAGOH",
+						"name": "MAGOH",
+						"description": "mago homolog, exon junction complex subunit"
+					},
+					{
+						"key": "KDR",
+						"name": "KDR",
+						"description": "kinase insert domain receptor"
+					},
+					{
+						"key": "MAGEA1",
+						"name": "MAGEA1",
+						"description": "MAGE family member A1"
+					},
+					{
+						"key": "MEF2B",
+						"name": "MEF2B",
+						"description": "myocyte enhancer factor 2B"
+					},
+					{
+						"key": "HLA-B",
+						"name": "HLA-B",
+						"description": "major histocompatibility complex, class I, B"
+					},
+					{
+						"key": "HLA-A",
+						"name": "HLA-A",
+						"description": "major histocompatibility complex, class I, A"
+					},
+					{
+						"key": "GATA2",
+						"name": "GATA2",
+						"description": "GATA binding protein 2"
+					},
+					{
+						"key": "RBM10",
+						"name": "RBM10",
+						"description": "RNA binding motif protein 10"
+					},
+					{
+						"key": "ZRSR2",
+						"name": "ZRSR2",
+						"description": "zinc finger CCCH-type, RNA binding motif and serine/arginine rich 2"
+					},
+					{
+						"key": "CREBBP",
+						"name": "CREBBP",
+						"description": "CREB binding protein"
+					},
+					{
+						"key": "STAG2",
+						"name": "STAG2",
+						"description": "STAG2 cohesin complex component"
+					},
+					{
+						"key": "ATR",
+						"name": "ATR",
+						"description": "ATR serine/threonine kinase"
+					},
+					{
+						"key": "EZH2",
+						"name": "EZH2",
+						"description": "enhancer of zeste 2 polycomb repressive complex 2 subunit"
+					},
+					{
+						"key": "DDR1",
+						"name": "DDR1",
+						"description": "discoidin domain receptor tyrosine kinase 1"
+					},
+					{
+						"key": "CTCF",
+						"name": "CTCF",
+						"description": "CCCTC-binding factor"
+					},
+					{
+						"key": "IKBKB",
+						"name": "IKBKB",
+						"description": "inhibitor of nuclear factor kappa B kinase subunit beta"
+					},
+					{
+						"key": "del5q31",
+						"name": "del5q31",
+						"description": "Missing in genenames.org: del5q31"
+					},
+					{
+						"key": "ZMYM3",
+						"name": "ZMYM3",
+						"description": "zinc finger MYM-type containing 3"
+					},
+					{
+						"key": "CIC",
+						"name": "CIC",
+						"description": "capicua transcriptional repressor"
+					},
+					{
+						"key": "JAK1",
+						"name": "JAK1",
+						"description": "Janus kinase 1"
+					},
+					{
+						"key": "H3-3B",
+						"name": "H3-3B",
+						"description": "H3.3 histone B"
+					},
+					{
+						"key": "SYK",
+						"name": "SYK",
+						"description": "spleen associated tyrosine kinase"
+					},
+					{
+						"key": "PDCD1LG2",
+						"name": "PDCD1LG2",
+						"description": "programmed cell death 1 ligand 2"
+					},
+					{
+						"key": "NCOR1",
+						"name": "NCOR1",
+						"description": "nuclear receptor corepressor 1"
+					},
+					{
+						"key": "YAP1",
+						"name": "YAP1",
+						"description": "Yes1 associated transcriptional regulator"
+					},
+					{
+						"key": "AMER1",
+						"name": "AMER1",
+						"description": "APC membrane recruitment protein 1"
+					},
+					{
+						"key": "2del1p19q",
+						"name": "2del1p19q",
+						"description": "Missing in genenames.org: 2del1p19q"
+					},
+					{
+						"key": "EPCAM",
+						"name": "EPCAM",
+						"description": "epithelial cell adhesion molecule"
+					},
+					{
+						"key": "SF3B1",
+						"name": "SF3B1",
+						"description": "splicing factor 3b subunit 1"
+					},
+					{
+						"key": "CDKN2B",
+						"name": "CDKN2B",
+						"description": "cyclin dependent kinase inhibitor 2B"
+					},
+					{
+						"key": "MAP3K1",
+						"name": "MAP3K1",
+						"description": "mitogen-activated protein kinase kinase kinase 1"
+					},
+					{
+						"key": "MRE11A",
+						"name": "MRE11A",
+						"description": "Missing in genenames.org: MRE11A"
+					},
+					{
+						"key": "TPMT",
+						"name": "TPMT",
+						"description": "thiopurine S-methyltransferase"
+					},
+					{
+						"key": "TTF1",
+						"name": "TTF1",
+						"description": "transcription termination factor 1"
+					},
+					{
+						"key": "ARHGAP35",
+						"name": "ARHGAP35",
+						"description": "Rho GTPase activating protein 35"
+					},
+					{
+						"key": "IGF1R",
+						"name": "IGF1R",
+						"description": "insulin like growth factor 1 receptor"
+					},
+					{
+						"key": "CCND3",
+						"name": "CCND3",
+						"description": "cyclin D3"
+					},
+					{
+						"key": "PIM1",
+						"name": "PIM1",
+						"description": "Pim-1 proto-oncogene, serine/threonine kinase"
+					},
+					{
+						"key": "EP300",
+						"name": "EP300",
+						"description": "E1A binding protein p300"
+					},
+					{
+						"key": "ARID2",
+						"name": "ARID2",
+						"description": "AT-rich interaction domain 2"
+					},
+					{
+						"key": "MEN1",
+						"name": "MEN1",
+						"description": "menin 1"
+					},
+					{
+						"key": "RNF43",
+						"name": "RNF43",
+						"description": "ring finger protein 43"
+					},
+					{
+						"key": "MAP2K1",
+						"name": "MAP2K1",
+						"description": "mitogen-activated protein kinase kinase 1"
+					},
+					{
+						"key": "MITF",
+						"name": "MITF",
+						"description": "melanocyte inducing transcription factor"
+					},
+					{
+						"key": "SDHB",
+						"name": "SDHB",
+						"description": "succinate dehydrogenase complex iron sulfur subunit B"
+					},
+					{
+						"key": "MYCN",
+						"name": "MYCN",
+						"description": "MYCN proto-oncogene, bHLH transcription factor"
+					},
+					{
+						"key": "FOLH1",
+						"name": "FOLH1",
+						"description": "folate hydrolase 1"
+					},
+					{
+						"key": "FANCD2",
+						"name": "FANCD2",
+						"description": "FA complementation group D2"
+					},
+					{
+						"key": "MSH3",
+						"name": "MSH3",
+						"description": "mutS homolog 3"
+					},
+					{
+						"key": "SRSF2",
+						"name": "SRSF2",
+						"description": "serine and arginine rich splicing factor 2"
+					},
+					{
+						"key": "NOTCH2",
+						"name": "NOTCH2",
+						"description": "notch receptor 2"
+					},
+					{
+						"key": "NOTCH3",
+						"name": "NOTCH3",
+						"description": "notch receptor 3"
+					},
+					{
+						"key": "CD274",
+						"name": "CD274",
+						"description": "CD274 molecule"
+					},
+					{
+						"key": "NOTCH1",
+						"name": "NOTCH1",
+						"description": "notch receptor 1"
+					},
+					{
+						"key": "CBFB",
+						"name": "CBFB",
+						"description": "core-binding factor subunit beta"
+					},
+					{
+						"key": "MAX",
+						"name": "MAX",
+						"description": "MYC associated factor X"
+					},
+					{
+						"key": "NOTCH4",
+						"name": "NOTCH4",
+						"description": "notch receptor 4"
+					},
+					{
+						"key": "KMT2B",
+						"name": "KMT2B",
+						"description": "lysine methyltransferase 2B"
+					},
+					{
+						"key": "ZNF429",
+						"name": "ZNF429",
+						"description": "zinc finger protein 429"
+					},
+					{
+						"key": "SLCO1B3",
+						"name": "SLCO1B3",
+						"description": "solute carrier organic anion transporter family member 1B3"
+					},
+					{
+						"key": "ABL1",
+						"name": "ABL1",
+						"description": "ABL proto-oncogene 1, non-receptor tyrosine kinase"
+					},
+					{
+						"key": "SMAD2",
+						"name": "SMAD2",
+						"description": "SMAD family member 2"
+					},
+					{
+						"key": "ZFHX3",
+						"name": "ZFHX3",
+						"description": "zinc finger homeobox 3"
+					},
+					{
+						"key": "FUS",
+						"name": "FUS",
+						"description": "FUS RNA binding protein"
+					},
+					{
+						"key": "FANCA",
+						"name": "FANCA",
+						"description": "FA complementation group A"
+					},
+					{
+						"key": "BCL6",
+						"name": "BCL6",
+						"description": "BCL6 transcription repressor"
+					},
+					{
+						"key": "CDK4",
+						"name": "CDK4",
+						"description": "cyclin dependent kinase 4"
+					},
+					{
+						"key": "RHEB",
+						"name": "RHEB",
+						"description": "Ras homolog, mTORC1 binding"
+					},
+					{
+						"key": "NF1",
+						"name": "NF1",
+						"description": "neurofibromin 1"
+					},
+					{
+						"key": "CHD4",
+						"name": "CHD4",
+						"description": "chromodomain helicase DNA binding protein 4"
+					},
+					{
+						"key": "KIAA1549",
+						"name": "KIAA1549"
+					},
+					{
+						"key": "CASP8",
+						"name": "CASP8",
+						"description": "caspase 8"
+					},
+					{
+						"key": "SMC1A",
+						"name": "SMC1A",
+						"description": "structural maintenance of chromosomes 1A"
+					},
+					{
+						"key": "LATS2",
+						"name": "LATS2",
+						"description": "large tumor suppressor kinase 2"
+					},
+					{
+						"key": "RASA1",
+						"name": "RASA1",
+						"description": "RAS p21 protein activator 1"
+					},
+					{
+						"key": "TOP1",
+						"name": "TOP1",
+						"description": "DNA topoisomerase I"
+					},
+					{
+						"key": "c-Kit",
+						"name": "c-Kit",
+						"description": "Missing in genenames.org: c-Kit"
+					},
+					{
+						"key": "U2AF1",
+						"name": "U2AF1",
+						"description": "U2 small nuclear RNA auxiliary factor 1"
+					},
+					{
+						"key": "AURKA",
+						"name": "AURKA",
+						"description": "aurora kinase A"
+					},
+					{
+						"key": "ERBB4",
+						"name": "ERBB4",
+						"description": "erb-b2 receptor tyrosine kinase 4"
+					},
+					{
+						"key": "del7q31",
+						"name": "del7q31",
+						"description": "Missing in genenames.org: del7q31"
+					},
+					{
+						"key": "MAPK1",
+						"name": "MAPK1",
+						"description": "mitogen-activated protein kinase 1"
+					},
+					{
+						"key": "TCF7L2",
+						"name": "TCF7L2",
+						"description": "transcription factor 7 like 2"
+					},
+					{
+						"key": "RAD50",
+						"name": "RAD50",
+						"description": "RAD50 double strand break repair protein"
+					},
+					{
+						"key": "RPS6KB1",
+						"name": "RPS6KB1",
+						"description": "ribosomal protein S6 kinase B1"
+					},
+					{
+						"key": "ASXL2",
+						"name": "ASXL2",
+						"description": "ASXL transcriptional regulator 2"
+					},
+					{
+						"key": "BCOR",
+						"name": "BCOR",
+						"description": "BCL6 corepressor"
+					},
+					{
+						"key": "RB1",
+						"name": "RB1",
+						"description": "RB transcriptional corepressor 1"
+					},
+					{
+						"key": "AKT2",
+						"name": "AKT2",
+						"description": "AKT serine/threonine kinase 2"
+					},
+					{
+						"key": "CHEK2",
+						"name": "CHEK2",
+						"description": "checkpoint kinase 2"
+					},
+					{
+						"key": "MTAP",
+						"name": "MTAP",
+						"description": "methylthioadenosine phosphorylase"
+					},
+					{
+						"key": "PIK3R2",
+						"name": "PIK3R2",
+						"description": "phosphoinositide-3-kinase regulatory subunit 2"
+					},
+					{
+						"key": "PCBP1",
+						"name": "PCBP1",
+						"description": "poly(rC) binding protein 1"
+					},
+					{
+						"key": "PLCG1",
+						"name": "PLCG1",
+						"description": "phospholipase C gamma 1"
+					},
+					{
+						"key": "BARD1",
+						"name": "BARD1",
+						"description": "BRCA1 associated RING domain 1"
+					},
+					{
+						"key": "YES1",
+						"name": "YES1",
+						"description": "YES proto-oncogene 1, Src family tyrosine kinase"
+					},
+					{
+						"key": "FAM135B",
+						"name": "FAM135B",
+						"description": "family with sequence similarity 135 member B"
+					},
+					{
+						"key": "CDK12",
+						"name": "CDK12",
+						"description": "cyclin dependent kinase 12"
+					},
+					{
+						"key": "MECOM",
+						"name": "MECOM",
+						"description": "MDS1 and EVI1 complex locus"
+					},
+					{
+						"key": "H3-3A",
+						"name": "H3-3A",
+						"description": "H3.3 histone A"
+					},
+					{
+						"key": "DPYD",
+						"name": "DPYD",
+						"description": "dihydropyrimidine dehydrogenase"
+					},
+					{
+						"key": "RARA",
+						"name": "RARA",
+						"description": "retinoic acid receptor alpha"
+					},
+					{
+						"key": "CDX2",
+						"name": "CDX2",
+						"description": "caudal type homeobox 2"
+					},
+					{
+						"key": "RIT1",
+						"name": "RIT1",
+						"description": "Ras like without CAAX 1"
+					},
+					{
+						"key": "AXL",
+						"name": "AXL",
+						"description": "AXL receptor tyrosine kinase"
+					},
+					{
+						"key": "FOXA1",
+						"name": "FOXA1",
+						"description": "forkhead box A1"
+					},
+					{
+						"key": "CCND2",
+						"name": "CCND2",
+						"description": "cyclin D2"
+					},
+					{
+						"key": "PDGFRA",
+						"name": "PDGFRA",
+						"description": "platelet derived growth factor receptor alpha"
+					},
+					{
+						"key": "FBXW7",
+						"name": "FBXW7",
+						"description": "F-box and WD repeat domain containing 7"
+					},
+					{
+						"key": "TSC1",
+						"name": "TSC1",
+						"description": "TSC complex subunit 1"
+					},
+					{
+						"key": "CARD11",
+						"name": "CARD11",
+						"description": "caspase recruitment domain family member 11"
+					},
+					{
+						"key": "CUL3",
+						"name": "CUL3",
+						"description": "cullin 3"
+					},
+					{
+						"key": "FGF23",
+						"name": "FGF23",
+						"description": "fibroblast growth factor 23"
+					},
+					{
+						"key": "MCL1",
+						"name": "MCL1",
+						"description": "MCL1 apoptosis regulator, BCL2 family member"
+					},
+					{
+						"key": "KDM5C",
+						"name": "KDM5C",
+						"description": "lysine demethylase 5C"
+					},
+					{
+						"key": "PIK3CB",
+						"name": "PIK3CB",
+						"description": "phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit beta"
+					},
+					{
+						"key": "PIK3C2A",
+						"name": "PIK3C2A",
+						"description": "phosphatidylinositol-4-phosphate 3-kinase catalytic subunit type 2 alpha"
+					},
+					{
+						"key": "KDM6A",
+						"name": "KDM6A",
+						"description": "lysine demethylase 6A"
+					},
+					{
+						"key": "FOXL2",
+						"name": "FOXL2",
+						"description": "forkhead box L2"
+					},
+					{
+						"key": "ARID1B",
+						"name": "ARID1B",
+						"description": "AT-rich interaction domain 1B"
+					},
+					{
+						"key": "SRC",
+						"name": "SRC",
+						"description": "SRC proto-oncogene, non-receptor tyrosine kinase"
+					},
+					{
+						"key": "ERBB3",
+						"name": "ERBB3",
+						"description": "erb-b2 receptor tyrosine kinase 3"
+					},
+					{
+						"key": "FYN",
+						"name": "FYN",
+						"description": "FYN proto-oncogene, Src family tyrosine kinase"
+					},
+					{
+						"key": "TBX3",
+						"name": "TBX3",
+						"description": "T-box transcription factor 3"
+					},
+					{
+						"key": "AKT1",
+						"name": "AKT1",
+						"description": "AKT serine/threonine kinase 1"
+					},
+					{
+						"key": "AR",
+						"name": "AR",
+						"description": "androgen receptor"
+					},
+					{
+						"key": "ABCB1",
+						"name": "ABCB1",
+						"description": "ATP binding cassette subfamily B member 1"
+					},
+					{
+						"key": "L1CAM",
+						"name": "L1CAM",
+						"description": "L1 cell adhesion molecule"
+					},
+					{
+						"key": "TF",
+						"name": "TF",
+						"description": "transferrin"
+					},
+					{
+						"key": "TET2",
+						"name": "TET2",
+						"description": "tet methylcytosine dioxygenase 2"
+					},
+					{
+						"key": "DDR2",
+						"name": "DDR2",
+						"description": "discoidin domain receptor tyrosine kinase 2"
+					},
+					{
+						"key": "RICTOR",
+						"name": "RICTOR",
+						"description": "RPTOR independent companion of MTOR complex 2"
+					},
+					{
+						"key": "BCR-ABL",
+						"name": "BCR-ABL",
+						"description": "Missing in genenames.org: BCR-ABL"
+					},
+					{
+						"key": "ZNF217",
+						"name": "ZNF217",
+						"description": "zinc finger protein 217"
+					},
+					{
+						"key": "FGF9",
+						"name": "FGF9",
+						"description": "fibroblast growth factor 9"
+					},
+					{
+						"key": "CCND1",
+						"name": "CCND1",
+						"description": "cyclin D1"
+					},
+					{
+						"key": "MSH6",
+						"name": "MSH6",
+						"description": "mutS homolog 6"
+					},
+					{
+						"key": "MSH2",
+						"name": "MSH2",
+						"description": "mutS homolog 2"
+					},
+					{
+						"key": "SMO",
+						"name": "SMO",
+						"description": "smoothened, frizzled class receptor"
+					},
+					{
+						"key": "PXDNL",
+						"name": "PXDNL",
+						"description": "peroxidasin like"
+					},
+					{
+						"key": "MDM2",
+						"name": "MDM2",
+						"description": "MDM2 proto-oncogene"
+					},
+					{
+						"key": "IL7R",
+						"name": "IL7R",
+						"description": "interleukin 7 receptor"
+					},
+					{
+						"key": "NFE2L2",
+						"name": "NFE2L2",
+						"description": "NFE2 like bZIP transcription factor 2"
+					},
+					{
+						"key": "DNMT3A",
+						"name": "DNMT3A",
+						"description": "DNA methyltransferase 3 alpha"
+					},
+					{
+						"key": "TGFBR2",
+						"name": "TGFBR2",
+						"description": "transforming growth factor beta receptor 2"
+					},
+					{
+						"key": "VHL",
+						"name": "VHL",
+						"description": "von Hippel-Lindau tumor suppressor"
+					},
+					{
+						"key": "MUTYH",
+						"name": "MUTYH",
+						"description": "mutY DNA glycosylase"
+					},
+					{
+						"key": "MGA",
+						"name": "MGA",
+						"description": "MAX dimerization protein MGA"
+					},
+					{
+						"key": "FOLR1",
+						"name": "FOLR1",
+						"description": "folate receptor alpha"
+					},
+					{
+						"key": "MYC",
+						"name": "MYC",
+						"description": "MYC proto-oncogene, bHLH transcription factor"
+					},
+					{
+						"key": "CALR",
+						"name": "CALR",
+						"description": "calreticulin"
+					},
+					{
+						"key": "BAP1",
+						"name": "BAP1",
+						"description": "BRCA1 associated deubiquitinase 1"
+					},
+					{
+						"key": "PBRM1",
+						"name": "PBRM1",
+						"description": "polybromo 1"
+					},
+					{
+						"key": "FGF3",
+						"name": "FGF3",
+						"description": "fibroblast growth factor 3"
+					},
+					{
+						"key": "FGF4",
+						"name": "FGF4",
+						"description": "fibroblast growth factor 4"
+					},
+					{
+						"key": "MYCL",
+						"name": "MYCL",
+						"description": "MYCL proto-oncogene, bHLH transcription factor"
+					},
+					{
+						"key": "CCNE1",
+						"name": "CCNE1",
+						"description": "cyclin E1"
+					},
+					{
+						"key": "PGR",
+						"name": "PGR",
+						"description": "progesterone receptor"
+					},
+					{
+						"key": "KMT2C",
+						"name": "KMT2C",
+						"description": "lysine methyltransferase 2C"
+					},
+					{
+						"key": "CDK6",
+						"name": "CDK6",
+						"description": "cyclin dependent kinase 6"
+					},
+					{
+						"key": "FGF19",
+						"name": "FGF19",
+						"description": "fibroblast growth factor 19"
+					},
+					{
+						"key": "NF2",
+						"name": "NF2",
+						"description": "NF2, moesin-ezrin-radixin like (MERLIN) tumor suppressor"
+					},
+					{
+						"key": "FGFR4",
+						"name": "FGFR4",
+						"description": "fibroblast growth factor receptor 4"
+					},
+					{
+						"key": "ASXL1",
+						"name": "ASXL1",
+						"description": "ASXL transcriptional regulator 1"
+					},
+					{
+						"key": "PRKACA",
+						"name": "PRKACA",
+						"description": "protein kinase cAMP-activated catalytic subunit alpha"
+					},
+					{
+						"key": "ATM",
+						"name": "ATM",
+						"description": "ATM serine/threonine kinase"
+					},
+					{
+						"key": "RAC1",
+						"name": "RAC1",
+						"description": "Rac family small GTPase 1"
+					},
+					{
+						"key": "KIT",
+						"name": "KIT",
+						"description": "KIT proto-oncogene, receptor tyrosine kinase"
+					},
+					{
+						"key": "CLDN18",
+						"name": "CLDN18",
+						"description": "claudin 18"
+					},
+					{
+						"key": "GNAS",
+						"name": "GNAS",
+						"description": "GNAS complex locus"
+					},
+					{
+						"key": "PMS2",
+						"name": "PMS2",
+						"description": "PMS1 homolog 2, mismatch repair system component"
+					},
+					{
+						"key": "CTNNB1",
+						"name": "CTNNB1",
+						"description": "catenin beta 1"
+					},
+					{
+						"key": "MPL",
+						"name": "MPL",
+						"description": "MPL proto-oncogene, thrombopoietin receptor"
+					},
+					{
+						"key": "KMT2D",
+						"name": "KMT2D",
+						"description": "lysine methyltransferase 2D"
+					},
+					{
+						"key": "SMAD4",
+						"name": "SMAD4",
+						"description": "SMAD family member 4"
+					},
+					{
+						"key": "FGFR1",
+						"name": "FGFR1",
+						"description": "fibroblast growth factor receptor 1"
+					},
+					{
+						"key": "FLT3",
+						"name": "FLT3",
+						"description": "fms related receptor tyrosine kinase 3"
+					},
+					{
+						"key": "POLE",
+						"name": "POLE",
+						"description": "DNA polymerase epsilon, catalytic subunit"
+					},
+					{
+						"key": "CDKN2A",
+						"name": "CDKN2A",
+						"description": "cyclin dependent kinase inhibitor 2A"
+					},
+					{
+						"key": "MLH1",
+						"name": "MLH1",
+						"description": "mutL homolog 1"
+					},
+					{
+						"key": "KEAP1",
+						"name": "KEAP1",
+						"description": "kelch like ECH associated protein 1"
+					},
+					{
+						"key": "KLF5",
+						"name": "KLF5",
+						"description": "KLF transcription factor 5"
+					},
+					{
+						"key": "TERT",
+						"name": "TERT",
+						"description": "telomerase reverse transcriptase"
+					},
+					{
+						"key": "ESR1",
+						"name": "ESR1",
+						"description": "estrogen receptor 1"
+					},
+					{
+						"key": "FGFR3",
+						"name": "FGFR3",
+						"description": "fibroblast growth factor receptor 3"
+					},
+					{
+						"key": "PTEN",
+						"name": "PTEN",
+						"description": "phosphatase and tensin homolog"
+					},
+					{
+						"key": "ARID1A",
+						"name": "ARID1A",
+						"description": "AT-rich interaction domain 1A"
+					},
+					{
+						"key": "NTRK2",
+						"name": "NTRK2",
+						"description": "neurotrophic receptor tyrosine kinase 2"
+					},
+					{
+						"key": "NTRK3",
+						"name": "NTRK3",
+						"description": "neurotrophic receptor tyrosine kinase 3"
+					},
+					{
+						"key": "FGFR2",
+						"name": "FGFR2",
+						"description": "fibroblast growth factor receptor 2"
+					},
+					{
+						"key": "NTRK1",
+						"name": "NTRK1",
+						"description": "neurotrophic receptor tyrosine kinase 1"
+					},
+					{
+						"key": "PRAME",
+						"name": "PRAME",
+						"description": "PRAME nuclear receptor transcriptional regulator"
+					},
+					{
+						"key": "STK11",
+						"name": "STK11",
+						"description": "serine/threonine kinase 11"
+					},
+					{
+						"key": "APC",
+						"name": "APC",
+						"description": "APC regulator of WNT signaling pathway"
+					},
+					{
+						"key": "PIK3CA",
+						"name": "PIK3CA",
+						"description": "phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha"
+					},
+					{
+						"key": "BRCA 1",
+						"name": "BRCA 1",
+						"description": "Missing in genenames.org: BRCA 1"
+					},
+					{
+						"key": "BRCA 2",
+						"name": "BRCA 2",
+						"description": "Missing in genenames.org: BRCA 2"
+					},
+					{
+						"key": "JAK2",
+						"name": "JAK2",
+						"description": "Janus kinase 2"
+					},
+					{
+						"key": "MGMT",
+						"name": "MGMT",
+						"description": "O-6-methylguanine-DNA methyltransferase"
+					},
+					{
+						"key": "ATRX",
+						"name": "ATRX",
+						"description": "ATRX chromatin remodeler"
+					},
+					{
+						"key": "IDH2",
+						"name": "IDH2",
+						"description": "isocitrate dehydrogenase (NADP(+)) 2"
+					},
+					{
+						"key": "IDH1",
+						"name": "IDH1",
+						"description": "isocitrate dehydrogenase (NADP(+)) 1"
+					},
+					{
+						"key": "RET",
+						"name": "RET",
+						"description": "ret proto-oncogene"
+					},
+					{
+						"key": "ROS1",
+						"name": "ROS1",
+						"description": "ROS proto-oncogene 1, receptor tyrosine kinase"
+					},
+					{
+						"key": "PanTRK",
+						"name": "PanTRK",
+						"description": "Missing in genenames.org: PanTRK"
+					},
+					{
+						"key": "ALK",
+						"name": "ALK",
+						"description": "ALK receptor tyrosine kinase"
+					},
+					{
+						"key": "MET",
+						"name": "MET",
+						"description": "MET proto-oncogene, receptor tyrosine kinase"
+					},
+					{
+						"key": "NRAS",
+						"name": "NRAS",
+						"description": "NRAS proto-oncogene, GTPase"
+					},
+					{
+						"key": "EGFR",
+						"name": "EGFR",
+						"description": "epidermal growth factor receptor"
+					},
+					{
+						"key": "ERBB2",
+						"name": "ERBB2",
+						"description": "erb-b2 receptor tyrosine kinase 2"
+					},
+					{
+						"key": "MRP",
+						"name": "MRP",
+						"description": "Missing in genenames.org: MRP"
+					},
+					{
+						"key": "HER2neu",
+						"name": "HER2neu",
+						"description": "Missing in genenames.org: HER2neu"
+					},
+					{
+						"key": "TP53",
+						"name": "TP53",
+						"description": "tumor protein p53"
+					},
+					{
+						"key": "KRAS",
+						"name": "KRAS",
+						"description": "KRAS proto-oncogene, GTPase"
+					},
+					{
+						"key": "BRAF",
+						"name": "BRAF",
+						"description": "B-Raf proto-oncogene, serine/threonine kinase"
+					},
+					{
+						"key": "PDL1",
+						"name": "PDL1",
+						"description": "Missing in genenames.org: PDL1"
+					},
+					{
+						"key": "BRAFV600",
+						"name": "BRAFV600",
+						"description": "Missing in genenames.org: BRAFV600"
+					}
+				]
+			},
+			{
+				"key": "observationMolecularMarkerAminoacidchange",
+				"name": "Aminosäureänderung",
+				"system": "http://loinc.org",
+				"fieldType": "autocomplete",
+				"type": "EQUALS",
+				"criteria": []
+			},
+			{
+				"key": "observationMolecularMarkerDNAchange",
+				"name": "DNA Änderung",
+				"system": "http://loinc.org",
+				"fieldType": "autocomplete",
+				"type": "EQUALS",
+				"criteria": []
+			},
+			{
+				"key": "observationMolecularMarkerSeqRefNCBI",
+				"name": "SeqRefNCBI",
+				"system": "http://loinc.org",
+				"fieldType": "autocomplete",
+				"type": "EQUALS",
+				"criteria": []
+			},
+			{
+				"key": "observationMolecularMarkerEnsemblID",
+				"name": "EnsemblID",
+				"system": "http://loinc.org",
+				"fieldType": "autocomplete",
+				"type": "EQUALS",
+				"criteria": []
 			}
 		]
 	}
